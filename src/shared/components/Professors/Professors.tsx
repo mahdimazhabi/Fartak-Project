@@ -34,8 +34,9 @@ const Professors = () => {
               <img
                 src={IMG}
                 alt="استاد 1"
-                className="w-18 h-full border-yellow-500 mb-4"
+                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
               />
+
               <span className="lg:text-xl text-[9px] font-semibold text-right">
                 احمد استامعلی
               </span>
@@ -46,9 +47,10 @@ const Professors = () => {
             <div className="flex flex-col  border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
               <img
                 src={IMG}
-                alt="استاد 2"
-                className="w-18 h-full border-yellow-500 mb-4"
+                alt="استاد 1"
+                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
               />
+
               <span className="lg:text-xl text-[9px] font-semibold ">
                 علی داوکی
               </span>
@@ -59,9 +61,10 @@ const Professors = () => {
             <div className="flex flex-col border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
               <img
                 src={IMG}
-                alt="استاد 3"
-                className="w-18 h-full border-yellow-500 mb-4"
+                alt="استاد 1"
+                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
               />
+
               <span className="lg:text-xl text-[9px]  font-semibold text-right">
                 لیلا رجینی
               </span>
@@ -72,9 +75,10 @@ const Professors = () => {
             <div className="flex flex-col border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
               <img
                 src={IMG}
-                alt="استاد 4"
-                className="w-18 h-full border-yellow-500 mb-4"
+                alt="استاد 1"
+                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
               />
+
               <span className="lg:text-xl text-[9px] font-semibold text-right">
                 مهدی حسینی
               </span>
