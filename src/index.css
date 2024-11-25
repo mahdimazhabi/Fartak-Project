@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌ها */
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-regular.woff2") format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-regular.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-medium.woff2") format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-medium.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-semibold.woff2")
+      format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-semibold.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-bold.woff2") format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-bold.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-extrabold.woff2")
+      format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-extrabold.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: url("./assets/fonts/yekan/woff2/iranyekan-black.woff2") format("woff2"),
+    url("./assets/fonts/yekan/woff/iranyekan-black.woff") format("woff"),
+    url("./assets/fonts/yekan/ttf/iranyekan-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.light {
+  --background-color: #f8f9fa; /* رنگ روشن نزدیک به سفید */
+  --text-color: #2e3a46; /* متن طوسی مایل به آبی */
+}
+
+.dark {
+  --background-color: #111827; /* آبی تیره برای پس‌زمینه */
+  --text-color: #d1d5db; /* متن طوسی روشن */
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply min-h-screen font-iranyekan;
+    background-color: var(--background-color, #ffffff);
+    color: var(--text-color, #000000);
+    transition: all 0.3s ease;
+  }
+}
+
+/* استایل اسکرول بار */
+::-webkit-scrollbar {
+  width: 8px; /* عرض اسکرول بار */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(
+    --background-color,
+    #ffffff
+  ); /* رنگ پس‌زمینه نوار اسکرول */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color, #000000); /* رنگ دسته اسکرول */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* رنگ دسته اسکرول هنگام هاور */
+}
