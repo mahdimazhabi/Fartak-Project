@@ -73,7 +73,9 @@ export const LoginForm = () => {
         <div className="flex justify-center mt-4">
           <span className="font-bold">
             استاد یا کارفرما هستید؟
-            <span className="text-[#5171FC]">عضویت استاد و کارفرما</span>
+            <span className="text-[#5171FC] text-sm">
+              عضویت استاد و کارفرما
+            </span>
           </span>
         </div>
 
