@@ -54,12 +54,14 @@ const Header = () => {
             {isDarkMode ? <Sun /> : <Moon />}
           </Button>
           {isMobile ? (
-            <Button
-              className="border-none bg-inherit shadow-none hover:bg-inherit"
-              size="icon"
-              rounded={"md"}
-              icon={LogOut}
-            />
+            <Link to={"/Login"}>
+              <Button
+                className="border-none bg-inherit shadow-none hover:bg-inherit"
+                size="icon"
+                rounded={"md"}
+                icon={LogOut}
+              />
+            </Link>
           ) : (
             <Button
               className=" border-none bg-inherit hover:bg-inherit  "
