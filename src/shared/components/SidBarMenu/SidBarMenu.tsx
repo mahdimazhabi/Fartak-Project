@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-export function SidBarMenu() {
+export const SidBarMenu = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -40,4 +40,4 @@ export function SidBarMenu() {
       </SheetContent>
     </Sheet>
   );
-}
+};

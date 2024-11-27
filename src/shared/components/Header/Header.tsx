@@ -8,7 +8,8 @@ import { useMediaQuery } from "usehooks-ts";
 import { LogOut } from "lucide-react";
 import { SidBarMenu } from "../SidBarMenu/SidBarMenu";
 import MenuItems from "../MenuItems/MenuItems";
-function Header() {
+import { Link } from "react-router-dom";
+const Header = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isTablet = useMediaQuery("(max-width:428)");
@@ -37,6 +38,7 @@ function Header() {
           <div className="lg:block hidden">
             <Input
               icon={Search}
+              iconPosition="left"
               rounded="md"
               className="w-[228px] h-[49px]"
               placeholder="دنبال چی میگردی؟"
@@ -66,18 +68,20 @@ function Header() {
               shadow={"none"}
             />
           )}
-          <Button
-            className="border-none lg:block hidden py-3"
-            shadow={isDarkMode ? "custom" : undefined}
-            size="default"
-            rounded={"md"}
-          >
-            ورود | عضویت
-          </Button>
+          <Link to={"/Login"}>
+            <Button
+              className="border-none lg:block hidden py-3"
+              shadow={isDarkMode ? "custom" : undefined}
+              size="default"
+              rounded={"md"}
+            >
+              ورود | عضویت
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
