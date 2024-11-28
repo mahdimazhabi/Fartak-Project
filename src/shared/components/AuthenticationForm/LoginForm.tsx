@@ -8,6 +8,7 @@ import { useState } from "react";
 import { EyeOff } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   const [waiting, setWaiting] = useState(false);
@@ -71,12 +72,14 @@ export const LoginForm = () => {
         </div>
 
         <div className="flex justify-center mt-4">
-          <span className="font-bold">
-            استاد یا کارفرما هستید؟
-            <span className="text-[#5171FC] text-sm">
-              عضویت استاد و کارفرما
+          <Link to={"/Registration"}>
+            <span className="font-bold">
+              استاد یا کارفرما هستید؟
+              <span className="text-[#5171FC] text-sm">
+                عضویت استاد و کارفرما
+              </span>
             </span>
-          </span>
+          </Link>
         </div>
 
         <div className="flex justify-center gap-5 mt-5 flex-wrap">
