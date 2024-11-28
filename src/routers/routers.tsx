@@ -10,6 +10,7 @@ import TopCourses from "@/pages/Home/components/TopCourses/TopCourses";
 import Services from "@/pages/Home/components/Services/Services";
 import Professors from "@/pages/Home/components/Professors/Professors";
 import AuthLayout from "@/shared/layouts/AuthLayout/AuthLayout";
+import CourserTrainingcourse from "@/pages/Courses/components/CourserTrainingcourse";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -53,7 +54,12 @@ export const AllRouters: RouteObject[] = [
         children: [
           {
             path: "/Courses",
-            element: <CoursesHeader />,
+            element: (
+              <>
+                <CoursesHeader />
+                <CourserTrainingcourse />
+              </>
+            ),
           },
         ],
       },
