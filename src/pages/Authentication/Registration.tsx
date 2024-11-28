@@ -1,5 +1,5 @@
 import Img from "@/assets/Img/Rectangle 57.png";
-import { RegistrationForm } from "@/shared/components/AuthenticationForm/RegistrationForm";
+import { RegistrationForm } from "@/pages/Authentication/components/form/RegistrationForm";
 
 const Registration = () => {
   return (

@@ -6,9 +6,9 @@ import { ShoppingBag } from "lucide-react";
 import { useDarkMode } from "@/shared/hook/useDarkMode";
 import { useMediaQuery } from "usehooks-ts";
 import { LogOut } from "lucide-react";
+import { Link } from "react-router-dom";
 import { SidBarMenu } from "../SidBarMenu/SidBarMenu";
 import MenuItems from "../MenuItems/MenuItems";
-import { Link } from "react-router-dom";
 const Header = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -54,7 +54,7 @@ const Header = () => {
             {isDarkMode ? <Sun /> : <Moon />}
           </Button>
           {isMobile ? (
-            <Link to={"/Login"}>
+            <Link to={"/auth/Login"}>
               <Button
                 className="border-none bg-inherit shadow-none hover:bg-inherit"
                 size="icon"
@@ -70,7 +70,7 @@ const Header = () => {
               shadow={"none"}
             />
           )}
-          <Link to={"/Login"}>
+          <Link to={"/auth/Login"}>
             <Button
               className="border-none lg:block hidden py-3"
               shadow={isDarkMode ? "custom" : undefined}

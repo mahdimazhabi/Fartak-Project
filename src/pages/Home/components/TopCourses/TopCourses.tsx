@@ -2,7 +2,7 @@ import { Users, CreditCard, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Img from "@/assets/Img/image1.png";
 import Profile from "@/assets/Img/image.png";
-import TittleSection from "@/shared/layouts/TittleSection";
+import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
 
 const DataCourses = [
   { id: 1, Img: Profile, title: "دوره‌های پرفروش" },

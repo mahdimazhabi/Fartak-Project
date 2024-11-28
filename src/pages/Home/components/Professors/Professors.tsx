@@ -1,4 +1,4 @@
-import TittleSection from "@/shared/layouts/TittleSection";
+import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import IMG from "@/assets/Img/image 11.png"; // از تصویر ارسال‌شده برای استفاده در کارت‌ها

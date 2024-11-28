@@ -13,7 +13,7 @@ const MenuItems = () => {
         <Link to="">پروژه ها</Link>
       </li>
       <li className=" hover:bg-white/10 rounded w-full lg:w-auto p-2">
-        <Link to="">دوره ها</Link>
+        <Link to="/Courses">دوره ها</Link>
       </li>
       <li className=" hover:bg-white/10 rounded w-full lg:w-auto p-2">
         <Link to="">وبلاگ</Link>

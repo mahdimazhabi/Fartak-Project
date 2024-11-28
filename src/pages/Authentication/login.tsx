@@ -1,4 +1,4 @@
-import { LoginForm } from "@/shared/components/AuthenticationForm/LoginForm";
+import { LoginForm } from "@/pages/Authentication/components/form/LoginForm";
 import Img from "@/assets/Img/Rectangle 57.png";
 
 const Login = () => {
