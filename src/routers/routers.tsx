@@ -11,6 +11,7 @@ import Services from "@/pages/Home/components/Services/Services";
 import Professors from "@/pages/Home/components/Professors/Professors";
 import AuthLayout from "@/shared/layouts/AuthLayout/AuthLayout";
 import CourserTrainingcourse from "@/pages/Courses/components/CourserTrainingcourse";
+import Blog from "@/pages/Blog/Blog";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -63,6 +64,13 @@ export const AllRouters: RouteObject[] = [
           },
         ],
       },
+      {
+        path:"/Blog",
+        element:<Blog/>,
+        children:[{
+          
+        }]
+      }
     ],
   },
 ];
