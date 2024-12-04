@@ -1,20 +1,31 @@
 import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import IMG from "@/assets/Img/image 11.png"; // از تصویر ارسال‌شده برای استفاده در کارت‌ها
+import IMG from "@/assets/Img/image 11.png"; // تصویر ارسال‌شده
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Professors = () => {
+  // داده‌های اساتید
+  const professors = [
+    { name: "احمد استامعلی", course: "دوره JS", image: IMG },
+    { name: "علی داوکی", course: "دوره Python", image: IMG },
+    { name: "لیلا رجینی", course: "دوره Frontend", image: IMG },
+    { name: "مهدی حسینی", course: "دوره React", image: IMG },
+  ];
+
   return (
-    <section className="py-48  flex flex-col gap-10 lg:px-20 md:px-10 px-5">
+    <section className="flex flex-col gap-10 px-5 py-48 lg:px-20 md:px-10">
+      {/* بخش عنوان */}
       <div>
         <TittleSection
           title="برترین اساتید"
-          color="bg-yellow-600" //*/
+          color="bg-yellow-600"
           mode={false}
           titleCourse=""
         />
       </div>
+
+      {/* بخش اسلایدر */}
       <div>
         <Swiper
           spaceBetween={10}
@@ -23,68 +34,30 @@ const Professors = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          loop={true} // برای تکرار شدن خودکار اسلایدها
-          // onSlideChange={() => console.log("slide change")}
-          // onSwiper={(swiper) => console.log(swiper)}
+          loop={true}
           modules={[Autoplay, Pagination, Navigation]}
           className="flex justify-center mt-10"
         >
-          <SwiperSlide>
-            <div className="flex flex-col border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
-              <img
-                src={IMG}
-                alt="استاد 1"
-                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
-              />
-
-              <span className="lg:text-xl text-[9px] font-semibold text-right">
-                احمد استامعلی
-              </span>
-              <span className="text-[9px] text-gray-500">دوره JS</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col  border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
-              <img
-                src={IMG}
-                alt="استاد 1"
-                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
-              />
-
-              <span className="lg:text-xl text-[9px] font-semibold ">
-                علی داوکی
-              </span>
-              <span className="text-[9px] text-gray-500">دوره Python</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
-              <img
-                src={IMG}
-                alt="استاد 1"
-                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
-              />
-
-              <span className="lg:text-xl text-[9px]  font-semibold text-right">
-                لیلا رجینی
-              </span>
-              <span className="text-[9px] text-gray-500">دوره Frontend</span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col border items-center  p-4 bg-white/10 shadow-lg rounded-lg">
-              <img
-                src={IMG}
-                alt="استاد 1"
-                className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto border-yellow-500 mb-4"
-              />
-
-              <span className="lg:text-xl text-[9px] font-semibold text-right">
-                مهدی حسینی
-              </span>
-              <span className="text-[9px] text-gray-500">دوره React</span>
-            </div>
-          </SwiperSlide>
+          {professors.map((professor, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col items-center p-4 border rounded-lg shadow-lg bg-white/10">
+                {/* تصویر استاد */}
+                <img
+                  src={professor.image}
+                  alt={`استاد ${professor.name}`}
+                  className="w-full h-auto mb-4 border-yellow-500 sm:w-32 md:w-40 lg:w-48 xl:w-56"
+                />
+                {/* نام استاد */}
+                <span className="lg:text-xl text-[9px] font-semibold text-right">
+                  {professor.name}
+                </span>
+                {/* دوره استاد */}
+                <span className="text-[9px] text-gray-500">
+                  {professor.course}
+                </span>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

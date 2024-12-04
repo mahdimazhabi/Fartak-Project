@@ -3,7 +3,6 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Authentication/login";
 import Registration from "@/pages/Authentication/Registration";
 import Courses from "@/pages/Courses/Courses";
-import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 import RootLayout from "@/shared/layouts/RootLayout/RootLayout";
 import HeroSection from "@/pages/Home/components/HeroSection/HeroSection";
 import TopCourses from "@/pages/Home/components/TopCourses/TopCourses";
@@ -15,6 +14,9 @@ import Blog from "@/pages/Blog/Blog";
 import BlogHeroSwction from "@/pages/Blog/components/BlogHeroSection";
 import BlogCardSection from "@/pages/Blog/components/BlogCardSection";
 import BlogHighlightSection from "@/pages/Blog/components/BlogHighlightSection";
+import Projects from "@/pages/Projects/Projects";
+import TopProjects from "@/pages/Projects/components/TopProjects";
+import UrgentProjects from "@/pages/Projects/components/UrgentProjects";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -60,7 +62,6 @@ export const AllRouters: RouteObject[] = [
             path: "/Courses",
             element: (
               <>
-                <CoursesHeader />
                 <CourserTrainingcourse />
               </>
             ),
@@ -79,6 +80,21 @@ export const AllRouters: RouteObject[] = [
                 <BlogCardSection />
                 <BlogHighlightSection />
                 <BlogCardSection />
+              </>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/Projects",
+        element: <Projects />,
+        children: [
+          {
+            path: "/Projects",
+            element: (
+              <>
+                <TopProjects />
+                <UrgentProjects />
               </>
             ),
           },
