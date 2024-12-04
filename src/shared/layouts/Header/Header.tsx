@@ -16,26 +16,26 @@ const Header = () => {
 
   return (
     <header className="dark:bg-[#121e31] bg-slate-300">
-      <nav className="flex items-center justify-between p-5">
+      <nav className="flex items-center justify-between py-3 lg:p-5">
         {(isMobile || isTablet) && <SidBarMenu />}
 
         <div className="flex items-center">
           {/* Logo */}
           <Button
-            className="  hidden lg:block bg-inherit  ml-10 text-blue-500"
+            className="hidden ml-10 text-blue-500 lg:block bg-inherit"
             rounded="none"
             shadow="none"
             size="default"
           >
             Logo
           </Button>
-          <div className="lg:block hidden">
+          <div className="hidden lg:block">
             <MenuItems />
           </div>
         </div>
 
-        <div className="flex items-center lg:gap-8 gap-4">
-          <div className="lg:block hidden">
+        <div className="flex items-center gap-4 lg:gap-8">
+          <div className="hidden lg:block">
             <Input
               icon={Search}
               iconPosition="left"
@@ -56,7 +56,7 @@ const Header = () => {
           {isMobile ? (
             <Link to={"/auth/Login"}>
               <Button
-                className="border-none bg-inherit shadow-none hover:bg-inherit"
+                className="border-none shadow-none bg-inherit hover:bg-inherit"
                 size="icon"
                 rounded={"md"}
                 icon={LogOut}
@@ -64,7 +64,7 @@ const Header = () => {
             </Link>
           ) : (
             <Button
-              className=" border-none bg-inherit hover:bg-inherit  "
+              className="border-none bg-inherit hover:bg-inherit"
               icon={ShoppingBag}
               size={"icon"}
               shadow={"none"}
@@ -72,7 +72,7 @@ const Header = () => {
           )}
           <Link to={"/auth/Login"}>
             <Button
-              className="border-none lg:block hidden py-3"
+              className="hidden py-3 border-none lg:block"
               shadow={isDarkMode ? "custom" : undefined}
               size="default"
               rounded={"md"}

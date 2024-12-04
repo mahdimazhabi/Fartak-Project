@@ -12,6 +12,9 @@ import Professors from "@/pages/Home/components/Professors/Professors";
 import AuthLayout from "@/shared/layouts/AuthLayout/AuthLayout";
 import CourserTrainingcourse from "@/pages/Courses/components/CourserTrainingcourse";
 import Blog from "@/pages/Blog/Blog";
+import BlogHeroSwction from "@/pages/Blog/components/BlogHeroSection";
+import BlogCardSection from "@/pages/Blog/components/BlogCardSection";
+import BlogHighlightSection from "@/pages/Blog/components/BlogHighlightSection";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -65,12 +68,22 @@ export const AllRouters: RouteObject[] = [
         ],
       },
       {
-        path:"/Blog",
-        element:<Blog/>,
-        children:[{
-          
-        }]
-      }
+        path: "/Blog",
+        element: <Blog />,
+        children: [
+          {
+            path: "/Blog",
+            element: (
+              <>
+                <BlogHeroSwction />
+                <BlogCardSection />
+                <BlogHighlightSection />
+                <BlogCardSection />
+              </>
+            ),
+          },
+        ],
+      },
     ],
   },
 ];
