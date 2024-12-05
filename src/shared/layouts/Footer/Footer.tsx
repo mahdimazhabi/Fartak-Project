@@ -14,14 +14,14 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#121e31] bg-slate-300 text-right px-4 sm:px-6 lg:px-24 py-8 sm:py-12 mt-80">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 lg:gap-24">
+    <footer className="dark:bg-[#121e31] bg-slate-300 text-right  sm:px-6 lg:px-10 py-8 sm:py-12 mt-80 \">
+      <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 ">
         {/* بخش تماس با ما */}
         <div>
           <Label className="text-[#3A86FF] text-base font-bold mb-4 block">
             فرتاک
           </Label>
-          <ul className="text-[#77808B] font-medium text-base space-y-4">
+          <ul className="text-[#77808B] font-medium text-base space-y-4  ">
             <li className="flex items-center gap-2">
               <MapPin className="text-[#3A86FF]" />
               آدرس
@@ -151,7 +151,7 @@ const Footer = () => {
         </div>
 
         {/* بخش اخبار و اشتراک ایمیل */}
-        <div>
+        <div className="col-span-2 p-2 lg:p-0 lg:col-span-1 ">
           <span className="text-[#3A86FF] text-base font-bold mb-4 block">
             اخبار
           </span>
@@ -161,12 +161,12 @@ const Footer = () => {
             </Label>
             <Input
               type="email"
-              rounded={"sm"}
+              rounded={"md"}
               placeholder="ایمیل خود را وارد کنید"
-              className="text-[#77808B] font-medium placeholder:text-[#77808B] placeholder:font-medium border-[#76AEFF] w-ful"
+              className="text-[#77808B] font-medium placeholder:text-[#77808B] placeholder:font-medium border-[#76AEFF] mt-4"
             />
           </div>
-          <Button className="mt-4 Lg:px-12 py-7 w-full rounded-lg bg-[#3A86FF] text-white border-none hover:bg-[#3563C2] transition-colors  ">
+          <Button className="mt-4 Lg:px-12 py-7 w-full rounded-lg bg-[#3A86FF] text-white border-none hover:bg-[#3563C2] transition-colors">
             ارسال
           </Button>
         </div>
