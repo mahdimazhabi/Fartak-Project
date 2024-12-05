@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import textShadow from "tailwindcss-textshadow";
+
 export default {
   darkMode: ["class"],
   content: [
@@ -12,7 +14,6 @@ export default {
       fontFamily: {
         iranyekan: ["iranyekan", "sans-serif"],
       },
-
       colors: {
         button: {
           background: "var(--button-background-color)",
@@ -32,21 +33,21 @@ export default {
         },
       },
       transitionProperty: {
-        all: "all", // اضافه کردن ترنزیشن برای همه خواص
+        all: "all",
         colors: "background-color, border-color, color, fill, stroke",
         dimensions: "width, height, margin, padding",
         spacing: "margin, padding, gap",
       },
       transitionDuration: {
-        200: "200ms", // زمان‌های پیش‌فرض
+        200: "200ms",
         400: "400ms",
         800: "800ms",
       },
       transitionTimingFunction: {
-        "in-out": "ease-in-out", // عملکرد easing
+        "in-out": "ease-in-out",
         "ease-custom": "cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },
-  plugins: [require("tailwindcss-textshadow")],
+  plugins: [textShadow],
 };
