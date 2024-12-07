@@ -9,14 +9,25 @@ import { LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SidBarMenu } from "../SidBarMenu/SidBarMenu";
 import MenuItems from "../MenuItems/MenuItems";
-const Header = () => {
+import { useState } from "react";
+const Header: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isTablet = useMediaQuery("(max-width:428)");
+  const [scrollY, setscrollY] = useState(0);
+
+  window.addEventListener("scroll", () => {
+    setscrollY(window.scrollY);
+  });
 
   return (
-    <header className="dark:bg-[#121e31] bg-slate-300">
-      <nav className="flex items-center justify-between py-3 lg:p-5">
+    <header className=" dark:bg-[#121e31] bg-slate-300 z-50 transition-opacity duration-300">
+      <nav
+        className={`flex justify-between items-center overflow-auto py-3 lg:p-5 w-full transition-all duration-300 transform fixed top-0 left-0 ${
+          scrollY > 0 ? "dark:bg-[#121e31] bg-slate-300 " : ""
+        }`}
+        style={{ zIndex: 100 }}
+      >
         {(isMobile || isTablet) && <SidBarMenu />}
 
         <div className="flex items-center">
