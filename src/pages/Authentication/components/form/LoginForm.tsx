@@ -39,12 +39,12 @@ export const LoginForm = () => {
       <div className="flex flex-col gap-8 px-4 sm:px-8 lg:px-16">
         <div className="mx-auto w-full sm:w-[500px] md:w-[600px]">
           <Input
-            label="ایمیل"
-            placeholder="ایمیل خود را وارد کنید"
+            label="شماره موبایل"
+            placeholder="شماره مویابل  خود را وارد کنید"
+            {...register("mobile")}
+            error={errors.mobile}
+            className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
             rounded={"md"}
-            {...register("email")}
-            error={errors.email}
-            className="border-none w-full bg-[#EFF0F2]"
           />
         </div>
 

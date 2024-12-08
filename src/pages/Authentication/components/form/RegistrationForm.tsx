@@ -8,6 +8,7 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { EyeOff } from "lucide-react";
 
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
@@ -47,16 +48,19 @@ export const RegistrationForm = () => {
         </div>
         <div className="justify-center lg:flex">
           <Input
-            label="ایمیل"
-            placeholder="ایمیل خود را وارد کنید"
-            {...register("email")}
-            error={errors.email}
+            label="شماره موبایل"
+            placeholder="شماره مویابل  خود را وارد کنید"
+            {...register("mobile")}
+            error={errors.mobile}
             className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
             rounded={"md"}
           />
         </div>
         <div className="justify-center lg:flex">
           <Input
+            icon={EyeOff}
+            iconPosition="left"
+            cursorpointer={true}
             label="رمز عبور"
             placeholder="رمز عبور خود را وارد کنید"
             {...register("password")}
@@ -65,13 +69,13 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
-        <div className="justify-center mt-5 lg:flex md:flex">
+        <div className="flex justify-center mt-5">
           <Button
             type="submit"
             loading={waiting}
-            className="bg-[#5171FC] rounded-full w-full sm:w-[300px] lg:h-[60px] h-[45px] text-2xl font-bold"
+            className="bg-[#5171FC] rounded-full w-[300px] h-[60px] text-2xl font-bold"
           >
-            عضویت
+            عضویت{" "}
           </Button>
         </div>
         <div className="flex justify-center ">
