@@ -3,7 +3,7 @@ import Img from "@/assets/Img/Rectangle 57.png";
 
 const Login = () => {
   return (
-    <div className="flex min-h-screen py-2 overflow-hidden px-9">
+    <div className="flex min-h-screen py-2 overflow-hidden lg:px-9">
       {/* بخش تصویر */}
       <div className="hidden lg:flex">
         <img
