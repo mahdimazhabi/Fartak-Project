@@ -3,7 +3,7 @@ import { RegistrationForm } from "@/pages/Authentication/components/form/Registr
 
 const Registration = () => {
   return (
-    <div className="flex min-h-screen py-2 overflow-hidden ">
+    <div className="flex py-2 overflow-hidden px-9">
       <div className="hidden lg:flex">
         <img
           src={Img}
