@@ -45,7 +45,7 @@ const Professors = () => {
                 <img
                   src={professor.image}
                   alt={`استاد ${professor.name}`}
-                  className="w-full h-auto mb-4 border-yellow-500 sm:w-32 md:w-40 lg:w-48 xl:w-56"
+                  className="w-full h-auto mb-4 sm:w-32 md:w-40 lg:w-48 xl:w-56"
                 />
                 {/* نام استاد */}
                 <span className="lg:text-xl text-[9px] font-semibold text-right">

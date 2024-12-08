@@ -26,7 +26,7 @@ export const LoginForm = () => {
   const onsubmit: SubmitHandler<IFormInput> = async () => {
     try {
       setWaiting(true);
-    } catch (error: any) {
+    } catch (error) {
       console.log("fetch data", error);
     } finally {
       setWaiting(false);
@@ -82,7 +82,7 @@ export const LoginForm = () => {
           </Link>
         </div>
 
-        <div className="flex justify-center gap-5 mt-5 flex-wrap">
+        <div className="flex flex-wrap justify-center gap-5 mt-5">
           <div className="flex items-center border border-[#D2D2D2] p-2 rounded cursor-pointer hover:bg-white transition-colors duration-500 hover:text-black font-bold">
             <span>Sign up with GitHub</span>
             <FaGithub className="relative bottom-0.5 mr-2 w-[40px] h-[40px]" />

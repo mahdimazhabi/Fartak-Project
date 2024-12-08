@@ -24,7 +24,7 @@ export const RegistrationForm = () => {
   const onsubmit: SubmitHandler<IFormInput> = async () => {
     try {
       setWaiting(true);
-    } catch (error: any) {
+    } catch (error) {
       console.log("fetch data", error);
       reset();
     } finally {
@@ -35,7 +35,7 @@ export const RegistrationForm = () => {
   return (
     <form onSubmit={handleSubmit(onsubmit)}>
       <div className="flex flex-col gap-3 ">
-        <div className="lg:flex justify-center">
+        <div className="justify-center lg:flex">
           <Input
             label="نام و نام خانوادگی"
             placeholder="مهتاب هادیان"
@@ -45,7 +45,7 @@ export const RegistrationForm = () => {
             className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]" // رسپانسیو برای اندازه‌های مختلف
           />
         </div>
-        <div className="lg:flex justify-center">
+        <div className="justify-center lg:flex">
           <Input
             label="ایمیل"
             placeholder="ایمیل خود را وارد کنید"
@@ -55,7 +55,7 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
-        <div className="lg:flex justify-center">
+        <div className="justify-center lg:flex">
           <Input
             label="رمز عبور"
             placeholder="رمز عبور خود را وارد کنید"
@@ -65,7 +65,7 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
-        <div className="lg:flex md:flex justify-center mt-5">
+        <div className="justify-center mt-5 lg:flex md:flex">
           <Button
             type="submit"
             loading={waiting}
@@ -84,7 +84,7 @@ export const RegistrationForm = () => {
             </span>
           </Link>
         </div>
-        <div className="flex justify-center gap-5 mt-5 flex-wrap">
+        <div className="flex flex-wrap justify-center gap-5 mt-5">
           <div className="flex items-center border border-[#D2D2D2] p-2 rounded cursor-pointer hover:bg-white transition-colors duration-500 hover:text-black font-bold">
             <span>Sing up with GitHub</span>
             <FaGithub className="relative bottom-0.5 mr-2 w-[50px] h-[50px]" />
