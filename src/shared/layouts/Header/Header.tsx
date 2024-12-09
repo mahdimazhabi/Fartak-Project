@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   return (
     <header className=" dark:bg-[#121e31] bg-slate-300 z-50 transition-opacity duration-300 mb-40">
       <nav
-        className={`flex justify-between items-center overflow-auto py-3 lg:p-5 w-full transition-all duration-300 transform fixed top-0 left-0 ${
+        className={`flex justify-between items-center overflow-auto py-3 lg:p-5 w-full transition-all duration-300 transform fixed top-0 left-0 z-50 ${
           scrollY > 0 ? "dark:bg-[#121e31] bg-slate-300 " : ""
         }`}
       >
