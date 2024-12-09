@@ -26,7 +26,6 @@ const Header: React.FC = () => {
         className={`flex justify-between items-center overflow-auto py-3 lg:p-5 w-full transition-all duration-300 transform fixed top-0 left-0 ${
           scrollY > 0 ? "dark:bg-[#121e31] bg-slate-300 " : ""
         }`}
-        // style={{ zIndex: 100 }}
       >
         {(isMobile || isTablet) && <SidBarMenu />}
 
