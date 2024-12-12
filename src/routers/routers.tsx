@@ -17,6 +17,8 @@ import BlogHighlightSection from "@/pages/Blog/components/BlogHighlightSection";
 import Projects from "@/pages/Projects/Projects";
 import TopProjects from "@/pages/Projects/components/TopProjects";
 import UrgentProjects from "@/pages/Projects/components/UrgentProjects";
+import SlidersPage from "@/shared/components/SlidersPage";
+
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -63,6 +65,7 @@ export const AllRouters: RouteObject[] = [
             element: (
               <>
                 <CourserTrainingcourse />
+                <SlidersPage />
               </>
             ),
           },
@@ -95,6 +98,7 @@ export const AllRouters: RouteObject[] = [
               <>
                 <TopProjects />
                 <UrgentProjects />
+                <SlidersPage />
               </>
             ),
           },

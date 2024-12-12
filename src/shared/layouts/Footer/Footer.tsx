@@ -21,7 +21,7 @@ const Footer = () => {
           <Label className="text-[#3A86FF] text-base font-bold mb-4 block">
             فرتاک
           </Label>
-          <ul className="text-[#77808B] font-medium text-base space-y-4  ">
+          <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-4  ">
             <li className="flex items-center gap-2">
               <MapPin className="text-[#3A86FF]" />
               آدرس
@@ -42,7 +42,7 @@ const Footer = () => {
           <Label className="text-[#3A86FF] text-base font-bold mb-4 block">
             شبکه‌های اجتماعی
           </Label>
-          <ul className="text-[#77808B] font-medium text-base space-y-2">
+          <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-2">
             <Link to="#">
               <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
                 <FaDribbble className="text-[#3A86FF]" />
@@ -87,7 +87,7 @@ const Footer = () => {
           <span className="text-[#3A86FF] text-base font-bold mb-4 block">
             شرکت
           </span>
-          <ul className="text-[#77808B] font-medium text-base space-y-2">
+          <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-2">
             <Link to="#">
               <li className="hover:text-[#3A86FF] transition-colors mb-2">
                 درباره ما
@@ -121,7 +121,7 @@ const Footer = () => {
           <span className="text-[#3A86FF] text-base font-bold mb-4 block">
             خدمات
           </span>
-          <ul className="text-[#77808B] font-medium text-base ">
+          <ul className="text-[#77808B] font-medium lg:text-base text-sm">
             <Link to="#">
               <li className="hover:text-[#3A86FF] transition-colors mb-2">
                 مشاوره

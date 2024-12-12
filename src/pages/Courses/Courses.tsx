@@ -16,6 +16,7 @@ const Courses = () => {
           { id: 7, title: " موسیقی", url: "" },
         ]}
       />
+
       <Outlet />
     </>
   );
