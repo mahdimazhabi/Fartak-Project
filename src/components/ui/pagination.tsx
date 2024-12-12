@@ -9,7 +9,7 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
     role="navigation"
     aria-label="pagination"
     className={cn(
-      "mx-auto  grid grid-cols-4  place-content-center  lg:flex justify-center mt-24  ",
+      "mx-auto  grid grid-cols-2  place-content-center    lg:flex justify-center mt-24  ",
       className
     )}
     {...props}

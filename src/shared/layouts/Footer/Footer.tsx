@@ -15,7 +15,7 @@ import {
 const Footer = () => {
   return (
     <footer className="dark:bg-[#121e31] bg-slate-300 text-right  sm:px-6 lg:px-10 py-8 sm:py-12 mt-80 \">
-      <div className="grid grid-cols-2 gap-8 p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 ">
+      <div className="grid grid-cols-2 p-2 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 ">
         {/* بخش تماس با ما */}
         <div>
           <Label className="text-[#3A86FF] text-base font-bold mb-4 block">
@@ -27,11 +27,11 @@ const Footer = () => {
               آدرس
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="text-[#3A86FF]" />
+              <Mail className="text-[#3A86FF] flex-shrink-0" />
               Fartak@hello.com
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="text-[#3A86FF]" />
+              <Phone className="text-[#3A86FF] " />
               +98 923 4398549
             </li>
           </ul>
@@ -44,73 +44,39 @@ const Footer = () => {
           </Label>
           <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-2">
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaDribbble className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaDribbble className="text-[#3A86FF]" size={"24px"} />
                 دریبل
               </li>
             </Link>
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaBehance className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaBehance className="text-[#3A86FF]" size={"24px"} />
                 بیهنس
               </li>
             </Link>
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaMedium className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaMedium className="text-[#3A86FF]" size={"24px"} />
                 مدیوم
               </li>
             </Link>
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaInstagram className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaInstagram className="text-[#3A86FF]" size={"24px"} />
                 اینستاگرام
               </li>
             </Link>
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaFacebook className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaFacebook className="text-[#3A86FF]" size={"24px"} />
                 فیسبوک
               </li>
             </Link>
             <Link to="#">
-              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors mb-2">
-                <FaTwitter className="text-[#3A86FF]" />
+              <li className="flex items-center gap-2 hover:text-[#3A86FF] transition-colors lg:mb-3 mb-2">
+                <FaTwitter className="text-[#3A86FF]" size={"24px"} />
                 توییتر
-              </li>
-            </Link>
-          </ul>
-        </div>
-
-        {/* بخش شرکت */}
-        <div>
-          <span className="text-[#3A86FF] text-base font-bold mb-4 block">
-            شرکت
-          </span>
-          <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-2">
-            <Link to="#">
-              <li className="hover:text-[#3A86FF] transition-colors mb-2">
-                درباره ما
-              </li>
-            </Link>
-            <Link to="#">
-              <li className="hover:text-[#3A86FF] transition-colors mb-2">
-                تیم
-              </li>
-            </Link>
-            <Link to="#">
-              <li className="hover:text-[#3A86FF] transition-colors mb-2">
-                فرصت‌های شغلی
-              </li>
-            </Link>
-            <Link to="#">
-              <li className="hover:text-[#3A86FF] transition-colors mb-2">
-                تماس با ما
-              </li>
-            </Link>
-            <Link to="#">
-              <li className="hover:text-[#3A86FF] transition-colors mb-2">
-                سیاست‌های حریم خصوصی
               </li>
             </Link>
           </ul>
@@ -145,6 +111,40 @@ const Footer = () => {
             <Link to="#">
               <li className="hover:text-[#3A86FF] transition-colors mb-2">
                 توسعه نرم‌افزار
+              </li>
+            </Link>
+          </ul>
+        </div>
+
+        {/* بخش شرکت */}
+        <div>
+          <span className="text-[#3A86FF] text-base font-bold mb-4 block">
+            شرکت
+          </span>
+          <ul className="text-[#77808B] font-medium lg:text-base text-sm space-y-2">
+            <Link to="#">
+              <li className="hover:text-[#3A86FF] transition-colors mb-2">
+                درباره ما
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="hover:text-[#3A86FF] transition-colors mb-2">
+                تیم
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="hover:text-[#3A86FF] transition-colors mb-2">
+                فرصت‌های شغلی
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="hover:text-[#3A86FF] transition-colors mb-2">
+                تماس با ما
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="hover:text-[#3A86FF] transition-colors mb-2">
+                سیاست‌های حریم خصوصی
               </li>
             </Link>
           </ul>
