@@ -15,7 +15,6 @@ const SlidersPage = () => {
           <PaginationLink href="#">2</PaginationLink>
           <PaginationLink href="#">3</PaginationLink>
           <PaginationLink href="#">4</PaginationLink>
-
           <PaginationItem>
             <PaginationEllipsis />
           </PaginationItem>
