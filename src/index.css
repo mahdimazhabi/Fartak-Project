@@ -76,7 +76,7 @@
     @apply min-h-screen font-iranyekan;
     background-color: var(--background-color, #ffffff);
     color: var(--text-color, #000000);
-    transition: all 0.3s ease;
+    transition: color 0.2s;
   }
 }
 

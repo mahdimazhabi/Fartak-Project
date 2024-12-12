@@ -21,13 +21,13 @@ export const SidBarMenu = () => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <Button className="w-1/2 flex top-2 mb-5  bg-inherit hover:bg-inherit">
+            <Button className="flex w-1/2 mb-5 top-2 bg-inherit hover:bg-inherit">
               Logo
             </Button>
           </SheetTitle>
           <hr className="border border-zinc-700 " />
         </SheetHeader>
-        <div className=" mt-5">
+        <div className="mt-5 ">
           <Input
             icon={Search}
             rounded="md"
