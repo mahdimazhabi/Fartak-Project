@@ -3,6 +3,7 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationLink,
+  PaginationEllipsis,
 } from "@/components/ui/pagination";
 
 const SlidersPage = () => {
@@ -14,10 +15,10 @@ const SlidersPage = () => {
           <PaginationLink href="#">2</PaginationLink>
           <PaginationLink href="#">3</PaginationLink>
           <PaginationLink href="#">4</PaginationLink>
-          <PaginationLink href="#">5</PaginationLink>
-          <PaginationLink href="#">6</PaginationLink>
-          <PaginationLink href="#">7</PaginationLink>
-          <PaginationLink href="#">8</PaginationLink>
+
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
           <PaginationLink href="#">9</PaginationLink>
           <PaginationLink href="#">10</PaginationLink>
           <PaginationLink href="#">11</PaginationLink>

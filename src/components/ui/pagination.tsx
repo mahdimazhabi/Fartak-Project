@@ -9,7 +9,7 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
     role="navigation"
     aria-label="pagination"
     className={cn(
-      "mx-auto flex w-full justify-center mt-24 overflow-auto md:overflow-visible", // Scroll for mobile
+      "mx-auto flex w-full justify-center mt-24 overflow-auto md:overflow-visible  ",
       className
     )}
     {...props}
@@ -24,7 +24,7 @@ const PaginationContent = React.forwardRef<
   <ul
     ref={ref}
     className={cn(
-      "flex flex-row items-center gap-1 md:gap-3 px-2 md:px-0", // Reduce gap on mobile
+      "flex flex-row items-center gap-1  md:gap-3 px-2 md:px-0",
       className
     )}
     {...props}
@@ -36,7 +36,7 @@ const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  <li ref={ref} className={cn("flex gap-3", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
@@ -58,12 +58,13 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
+      isActive ? "bg-[#A8A8A82E] rounded-xl" : "bg-[#96A9FF7A] rounded-md", // متفاوت برای حالت غیر فعال
+      "rounded-lg", // کلاس پیش‌فرض
       className
     )}
     {...props}
   />
 );
-PaginationLink.displayName = "PaginationLink";
 
 const PaginationPrevious = ({
   className,
@@ -72,7 +73,7 @@ const PaginationPrevious = ({
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2.5", className)}
+    className={cn("gap-1 pl-2.5  ", className)}
     {...props}
   >
     <ChevronLeft className="w-4 h-4" />
