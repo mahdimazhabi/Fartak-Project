@@ -8,9 +8,9 @@ const MenuItems = () => {
           خانه
         </li>
       </Link>
-      <Link to="">
+      <Link to="/Teaching">
         <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">
-          اساتید
+          تدریس
         </li>
       </Link>
       <Link to="/Projects">

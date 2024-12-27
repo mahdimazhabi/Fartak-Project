@@ -18,6 +18,7 @@ import Projects from "@/pages/Projects/Projects";
 import TopProjects from "@/pages/Projects/components/TopProjects";
 import UrgentProjects from "@/pages/Projects/components/UrgentProjects";
 import SlidersPage from "@/shared/components/SlidersPage";
+import Teaching from "@/pages/Teaching/Teaching";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -103,6 +104,11 @@ export const AllRouters: RouteObject[] = [
             ),
           },
         ],
+      },
+      {
+        path: "/Teaching",
+        element: <Teaching />,
+        children: [],
       },
     ],
   },
