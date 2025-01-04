@@ -7,8 +7,5 @@ export const schemaRegistration = yup.object().shape({
     .string()
     .min(6, "رمز عبور باید حداقل 6 کاراکتر باشد")
     .required("رمز عبور الزامی است"),
-  role: yup
-    .string()
-    .oneOf(["فریلنسر", "دانشجو"], "نقش انتخابی نامعتبر است")
-    .required("انتخاب نقش الزامی است"),
+  role: yup.string().required("انتخاب نقش الزامی است"),
 });

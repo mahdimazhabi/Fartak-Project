@@ -10,6 +10,7 @@ import { EyeOff } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Label } from "@/components/ui/label";
+import { SelectGroup } from "@radix-ui/react-select";
 import {
   Select,
   SelectContent,
@@ -21,16 +22,25 @@ import {
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
   const [waiting, setWaiting] = useState(false);
+
+  const dataSelect = [
+    { id: 1, descreption: "فریلنسر" },
+    { id: 2, descreption: "دانشجو" },
+    { id: 3, descreption: "کارفرما" },
+  ];
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<IFormInput>({
     resolver: yupResolver(schemaRegistration),
   });
 
-  const onsubmit: SubmitHandler<IFormInput> = async () => {
+  const onsubmit: SubmitHandler<IFormInput> = async (data) => {
+    console.log(data);
+
     try {
       setWaiting(true);
     } catch (error) {
@@ -81,15 +91,30 @@ export const RegistrationForm = () => {
           <Label className="mb-2 block text-black font-bold dark:text-white">
             نقش شما
           </Label>
-          <Select>
+          <Select
+            {...register("role")}
+            onValueChange={(value) => setValue("role", value)}
+          >
             <SelectTrigger className="bg-[#EFF0F2]">
-              <SelectValue placeholder="فریلنسر" />
+              <SelectValue placeholder="انتخاب کنید" />
             </SelectTrigger>
             <SelectContent className="bg-[#EFF0F2]">
-              <SelectItem value="فریلنسر">فریلنسر</SelectItem>
-              <SelectItem value="دانشجو">دانشجو</SelectItem>
+              <SelectGroup>
+                {dataSelect.map((item) => (
+                  <SelectItem
+                    value={item.id.toString()}
+                    key={item.id}
+                    className="mb-1 py-0.5"
+                  >
+                    <span>{item.descreption}</span>
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             </SelectContent>
           </Select>
+          {errors.role && (
+            <p className="text-red-600 mt-2 text-sm">{errors.role.message}</p>
+          )}
         </div>
 
         <div className="flex justify-center mt-5">
@@ -104,10 +129,8 @@ export const RegistrationForm = () => {
         <div className="flex justify-center ">
           <Link to={"/auth/Login"}>
             <span className="font-bold">
-              استاد یا کارفرما هستید؟
-              <span className="text-[#5171FC] text-sm">
-                عضویت استاد و کارفرما
-              </span>
+              کارفرما هستید؟
+              <span className="text-[#5171FC] text-sm">عضویت کارفرما</span>
             </span>
           </Link>
         </div>
