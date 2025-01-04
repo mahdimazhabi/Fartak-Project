@@ -73,11 +73,9 @@ export const LoginForm = () => {
 
         <div className="flex justify-center mt-4">
           <Link to={"/auth/Registration"}>
-            <span className="font-bold">
-              استاد یا کارفرما هستید؟
-              <span className="text-[#5171FC] text-sm">
-                عضویت استاد و کارفرما
-              </span>
+            <span className="font-bold  text-sm">
+              نقش دیگری دارید؟
+              <span className="text-[#5171FC] text-sm">عضویت</span>
             </span>
           </Link>
         </div>

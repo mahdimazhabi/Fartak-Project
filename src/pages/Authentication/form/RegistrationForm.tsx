@@ -128,7 +128,7 @@ export const RegistrationForm = () => {
         </div>
         <div className="flex justify-center ">
           <Link to={"/auth/Login"}>
-            <span className="font-bold">
+            <span className="font-bold text-sm">
               کارفرما هستید؟
               <span className="text-[#5171FC] text-sm">عضویت کارفرما</span>
             </span>
