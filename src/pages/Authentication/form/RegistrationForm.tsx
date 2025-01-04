@@ -69,6 +69,17 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
+        <div className="justify-center lg:flex">
+          <Input
+          type=""
+            label="نقش شما"
+            placeholder="رمز عبور خود را وارد کنید"
+            {...register("password")}
+            error={errors.password}
+            className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
+            rounded={"md"}
+          />
+        </div>
         <div className="flex justify-center mt-5">
           <Button
             type="submit"
