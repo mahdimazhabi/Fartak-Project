@@ -6,9 +6,9 @@ import * as yup from "yup";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { EyeOff } from "lucide-react";
+import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   const [waiting, setWaiting] = useState(false);
@@ -81,7 +81,6 @@ export const LoginForm = () => {
             </span>
           </Link>
         </div>
-
         <div className="flex flex-wrap justify-center gap-5 mt-5">
           <div className="flex items-center border border-[#D2D2D2] p-2 rounded cursor-pointer hover:bg-white transition-colors duration-500 hover:text-black font-bold">
             <span>Sign up with GitHub</span>

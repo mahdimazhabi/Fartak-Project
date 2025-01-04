@@ -7,10 +7,10 @@ import { useDarkMode } from "@/shared/hook/useDarkMode";
 import { useMediaQuery } from "usehooks-ts";
 import { LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
-import { SidBarMenu } from "../SidBarMenu/SidBarMenu";
-import MenuItems from "../MenuItems/MenuItems";
+import { SidBarMenu } from "@/shared/components/SidBarMenu";
+import MenuItems from "../../components/MenuItems";
 import { useState } from "react";
-const Header: React.FC = () => {
+const HeaderLayout: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isTablet = useMediaQuery("(max-width:428)");
@@ -96,4 +96,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default HeaderLayout;

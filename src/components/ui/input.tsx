@@ -3,7 +3,7 @@ import * as React from "react";
 import { FieldError } from "react-hook-form";
 
 import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import ErrorMessage from "@/shared/common/ErrorMessage";
 
 export type IconType = React.FunctionComponent<

@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import * as yup from "yup";
 import { useState } from "react";
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { EyeOff } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
@@ -35,7 +35,7 @@ export const RegistrationForm = () => {
   };
   return (
     <form onSubmit={handleSubmit(onsubmit)}>
-      <div className="flex flex-col gap-3 ">
+      <div className="flex flex-col gap-8 ">
         <div className="justify-center lg:flex">
           <Input
             label="نام و نام خانوادگی"
@@ -90,12 +90,12 @@ export const RegistrationForm = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-5 mt-5">
           <div className="flex items-center border border-[#D2D2D2] p-2 rounded cursor-pointer hover:bg-white transition-colors duration-500 hover:text-black font-bold">
-            <span>Sing up with GitHub</span>
-            <FaGithub className="relative bottom-0.5 mr-2 w-[50px] h-[50px]" />
+            <span>Sign up with GitHub</span>
+            <FaGithub className="relative bottom-0.5 mr-2 w-[40px] h-[40px]" />
           </div>
           <div className="flex items-center border border-[#D2D2D2] p-2 rounded cursor-pointer hover:bg-white transition-colors duration-500 hover:text-black font-bold">
-            <span>Sing up with Google</span>
-            <FcGoogle className="relative bottom-0.5 mr-2 w-[50px] h-[50px]" />
+            <span>Sign up with Google</span>
+            <FcGoogle className="relative bottom-0.5 mr-2 w-[40px] h-[40px]" />
           </div>
         </div>
       </div>

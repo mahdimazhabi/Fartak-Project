@@ -12,7 +12,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-const Footer = () => {
+const FooterLayout = () => {
   return (
     <footer className="dark:bg-[#121e31] bg-slate-300 text-right  sm:px-6 lg:px-10 py-8 sm:py-12 mt-80 \">
       <div className="grid grid-cols-2 p-2 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 ">
@@ -179,4 +179,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterLayout;

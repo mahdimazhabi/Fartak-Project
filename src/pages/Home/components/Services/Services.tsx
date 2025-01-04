@@ -1,4 +1,4 @@
-import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
+import TittleSection from "@/shared/components/TittleSection";
 
 const Services = () => {
   return (

@@ -1,6 +1,6 @@
 import Img from "@/assets/Img/image1.png";
 import Profile from "@/assets/Img/image.png";
-import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
+import TittleSection from "@/shared/components/TittleSection";
 import Card from "@/shared/components/Card";
 
 const DataCourses = [

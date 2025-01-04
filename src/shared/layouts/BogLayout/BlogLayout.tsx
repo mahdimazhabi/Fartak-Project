@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-const Blog = () => {
+const BlogLayout = () => {
   return (
     <>
       <div className="p-6 lg:p-12">
@@ -10,4 +10,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogLayout;

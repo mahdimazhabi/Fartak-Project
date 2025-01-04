@@ -1,4 +1,4 @@
-import TittleSection from "@/shared/layouts/TittleSection/TittleSection";
+import TittleSection from "@/shared/components/TittleSection";
 import Card from "@/shared/components/Card";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

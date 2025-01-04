@@ -1,12 +1,11 @@
 import { Outlet } from "react-router-dom";
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 
-
-const Projects = () => {
+const CoursesLayout = () => {
   return (
     <>
       <CoursesHeader
-        title="همه پروژه ها"
+        title="همه دروس"
         dataHeader={[
           { id: 1, title: "برنامه نویسی ", url: "" },
           { id: 2, title: "گرافیک ", url: "" },
@@ -23,4 +22,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default CoursesLayout;
