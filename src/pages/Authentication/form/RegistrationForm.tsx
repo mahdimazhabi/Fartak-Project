@@ -9,6 +9,14 @@ import { Link } from "react-router-dom";
 import { EyeOff } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
@@ -69,17 +77,21 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
-        <div className="justify-center lg:flex">
-          <Input
-          type=""
-            label="نقش شما"
-            placeholder="رمز عبور خود را وارد کنید"
-            {...register("password")}
-            error={errors.password}
-            className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
-            rounded={"md"}
-          />
+        <div className="flex flex-col items-start justify-center">
+          <Label className="mb-2 block text-black font-bold dark:text-white">
+            نقش شما
+          </Label>
+          <Select>
+            <SelectTrigger className="bg-[#EFF0F2]">
+              <SelectValue placeholder="فریلنسر" />
+            </SelectTrigger>
+            <SelectContent className="bg-[#EFF0F2]">
+              <SelectItem value="فریلنسر">فریلنسر</SelectItem>
+              <SelectItem value="دانشجو">دانشجو</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
+
         <div className="flex justify-center mt-5">
           <Button
             type="submit"
