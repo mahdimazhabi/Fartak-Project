@@ -11,6 +11,7 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Label } from "@/components/ui/label";
 import { SelectGroup } from "@radix-ui/react-select";
+import { useAuthentication } from "@/api/Authentication/Authentication";
 import {
   Select,
   SelectContent,
@@ -22,6 +23,7 @@ import {
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
   const [waiting, setWaiting] = useState(false);
+  const { add } = useAuthentication();
 
   const dataSelect = [
     { id: 1, descreption: "فریلنسر" },
@@ -43,6 +45,7 @@ export const RegistrationForm = () => {
 
     try {
       setWaiting(true);
+      add(data);
     } catch (error) {
       console.log("fetch data", error);
       reset();
@@ -56,12 +59,22 @@ export const RegistrationForm = () => {
       <div className="flex flex-col gap-8 ">
         <div className="justify-center lg:flex">
           <Input
-            label="نام و نام خانوادگی"
-            placeholder="مهتاب هادیان"
+            label="نام  "
+            placeholder="مهتاب "
             rounded={"md"}
-            {...register("lastNamefristname")}
-            error={errors.lastNamefristname}
+            {...register("name")}
+            error={errors.name}
             className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]" // رسپانسیو برای اندازه‌های مختلف
+          />
+        </div>
+        <div className="justify-center lg:flex">
+          <Input
+            label="نام خانوادگی"
+            placeholder="محمدی"
+            {...register("lastname")}
+            error={errors.lastname}
+            className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
+            rounded={"md"}
           />
         </div>
         <div className="justify-center lg:flex">
@@ -74,6 +87,17 @@ export const RegistrationForm = () => {
             rounded={"md"}
           />
         </div>
+        <div className="justify-center lg:flex">
+          <Input
+            label="ایمیل"
+            placeholder="ایمیل خود را وارد کنید"
+            {...register("email")}
+            error={errors.email}
+            className="border-none w-full sm:w-[500px] md:w-[600px] bg-[#EFF0F2]"
+            rounded={"md"}
+          />
+        </div>
+
         <div className="justify-center lg:flex">
           <Input
             icon={EyeOff}
@@ -92,8 +116,8 @@ export const RegistrationForm = () => {
             نقش شما
           </Label>
           <Select
-            {...register("role")}
-            onValueChange={(value) => setValue("role", value)}
+            {...register("kind")}
+            onValueChange={(value) => setValue("kind", value)}
           >
             <SelectTrigger className="bg-[#EFF0F2]">
               <SelectValue placeholder="انتخاب کنید" />
@@ -112,8 +136,8 @@ export const RegistrationForm = () => {
               </SelectGroup>
             </SelectContent>
           </Select>
-          {errors.role && (
-            <p className="text-red-600 mt-2 text-sm">{errors.role.message}</p>
+          {errors.kind && (
+            <p className="text-red-600 mt-2 text-sm">{errors.kind.message}</p>
           )}
         </div>
 
