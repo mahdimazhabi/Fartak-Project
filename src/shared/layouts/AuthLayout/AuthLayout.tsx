@@ -9,7 +9,7 @@ const AuthLayout = () => {
           <img
             src={Img}
             alt="Login Illustration"
-            className="w-[40vw] h-[97.5vh] object-cover"
+            className="w-[40vw] h-full object-cover"
           />
         </div>
         <Outlet />
