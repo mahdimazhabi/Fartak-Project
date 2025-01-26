@@ -1,5 +1,6 @@
 import { RegistrationForm } from "@/pages/Authentication/form/RegistrationForm";
 
+
 const Registration = () => {
   return (
     <div className="flex flex-col items-center justify-center flex-1 p-5">

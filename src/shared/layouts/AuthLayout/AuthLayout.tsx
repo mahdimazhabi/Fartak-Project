@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Img from "@/assets/Img/Rectangle 57.png";
+import { Toaster } from "@/components/ui/sonner";
 
 const AuthLayout = () => {
   return (
@@ -12,6 +13,7 @@ const AuthLayout = () => {
             className="w-[40vw] h-full object-cover"
           />
         </div>
+        <Toaster/>
         <Outlet />
       </div>
     </main>

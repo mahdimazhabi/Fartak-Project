@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { EyeOff } from "lucide-react";
@@ -25,7 +25,6 @@ export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
   const [waiting, setWaiting] = useState(false);
   const { add } = useAuthenticationApi();
-  const navigate = useNavigate();
 
   const dataSelect = [
     { id: 1, descreption: "فریلنسر" },
@@ -47,7 +46,6 @@ export const RegistrationForm = () => {
     try {
       setWaiting(true);
       await add(data);
-      navigate("/", { replace: true });
     } catch (error) {
       console.log("fetch data", error);
     } finally {

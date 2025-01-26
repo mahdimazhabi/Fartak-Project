@@ -2,6 +2,7 @@ import axios from "axios";
 import { LoginUser, RegisterUser } from "@/shared/interfaces/AuthInterface";
 import { useDataUser } from "@/shared/store/DataUser";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export const useAuthenticationApi = () => {
   const { setDataUser } = useDataUser();
@@ -37,11 +38,20 @@ export const useAuthenticationApi = () => {
           },
         }
       );
-      if (response) {
+
+      if (response.data.isSuccess) {
         localStorage.setItem("token", response.data.token.token);
+        toast.success("ثبت نام با موفقیت انجام شد");
+        setTimeout(() => {
+          navigate("/", { replace: true });
+        }, 3000);
+      } else {
+        toast.error(response.data.message);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      toast.error("خطا در ثبت نام");
+      toast.error(error.data.message);
     }
   };
 
