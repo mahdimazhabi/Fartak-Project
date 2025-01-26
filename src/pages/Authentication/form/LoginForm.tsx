@@ -9,11 +9,11 @@ import { EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { useAuthentication } from "@/api/Authentication/Authentication";
+// import { useAuthentication } from "@/api/Authentication/Authentication";
 
 export const LoginForm = () => {
   const [waiting, setWaiting] = useState(false);
-  const { Login } = useAuthentication();
+  // const { Login } = useAuthentication();
   type IFormInput = yup.InferType<typeof SchemaLogin>;
 
   const {
@@ -25,10 +25,10 @@ export const LoginForm = () => {
     resolver: yupResolver(SchemaLogin),
   });
 
-  const onsubmit: SubmitHandler<IFormInput> = async (data) => {
+  const onsubmit: SubmitHandler<IFormInput> = async () => {
     try {
       setWaiting(true);
-      await Login(data);
+      // await Login(data);
     } catch (error) {
       console.log("fetch data", error);
     } finally {
