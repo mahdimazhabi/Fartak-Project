@@ -18,13 +18,13 @@ import { Link } from "react-router-dom";
 import { EyeOff } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { useAuthentication } from "@/api/Authentication/Authentication";
+import { useAuthenticationApi } from "@/api/Authentication/AuthenticationApi";
 import * as yup from "yup";
 
 export const RegistrationForm = () => {
   type IFormInput = yup.InferType<typeof schemaRegistration>;
   const [waiting, setWaiting] = useState(false);
-  const { add } = useAuthentication();
+  const { add } = useAuthenticationApi();
   const navigate = useNavigate();
 
   const dataSelect = [

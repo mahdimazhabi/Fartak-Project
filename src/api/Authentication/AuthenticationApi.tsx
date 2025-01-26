@@ -1,9 +1,11 @@
 import axios from "axios";
-import { DataUser } from "@/shared/interfaces/AuthInterface";
+import { LoginUser, RegisterUser } from "@/shared/interfaces/AuthInterface";
 import { useDataUser } from "@/shared/store/DataUser";
+import { useNavigate } from "react-router-dom";
 
-export const useAuthentication = () => {
+export const useAuthenticationApi = () => {
   const { setDataUser } = useDataUser();
+  const navigate = useNavigate();
   const getDataUser = async () => {
     try {
       const response = await axios.post(
@@ -24,7 +26,7 @@ export const useAuthentication = () => {
       console.log(error);
     }
   };
-  const add = async (data: DataUser) => {
+  const add = async (data: RegisterUser) => {
     try {
       const response = await axios.post(
         "https://www.backendtestali.ir/api/Users/Add",
@@ -36,14 +38,14 @@ export const useAuthentication = () => {
         }
       );
       if (response) {
-        console.log("User Added Successfully");
+        localStorage.setItem("token", response.data.token.token);
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const Login = async (data: DataUser) => {
+  const Login = async (data: LoginUser) => {
     try {
       const response = await axios.post(
         "https://www.backendtestali.ir/api/Users/GetByMobilePassword",
@@ -58,6 +60,8 @@ export const useAuthentication = () => {
 
       if (response) {
         console.log("User Logged in Successfully");
+        navigate("/", { replace: true });
+        localStorage.setItem("token", response.data.token.token);
       }
     } catch (error) {
       console.log(error);
