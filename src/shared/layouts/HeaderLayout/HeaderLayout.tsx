@@ -9,16 +9,31 @@ import { LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SidBarMenu } from "@/shared/components/SidBarMenu";
 import MenuItems from "../../components/MenuItems";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useDataUserById from "@/shared/action/GetDataUser";
+import { useUniqueUserDataStore } from "@/shared/store/UniqueUserDataStore";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Typography } from "@/shared/common/Typography";
+import MainAvatar from "@/shared/common/MainAvatar";
+import useisPersian from "@/shared/hook/useispersian";
+
 const HeaderLayout: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isTablet = useMediaQuery("(max-width:428)");
   const [scrollY, setscrollY] = useState(0);
+  const token = localStorage.getItem("token");
+  const { getuserbyId } = useDataUserById();
+  const { dataUser } = useUniqueUserDataStore();
 
   window.addEventListener("scroll", () => {
     setscrollY(window.scrollY);
   });
+  console.log(dataUser);
+
+  useEffect(() => {
+    getuserbyId();
+  }, []);
 
   return (
     <header className=" dark:bg-[#121e31] bg-slate-300 z-50 transition-opacity duration-300 mb-24">
@@ -80,16 +95,68 @@ const HeaderLayout: React.FC = () => {
               shadow={"none"}
             />
           )}
-          <Link to={"/auth/Login"}>
-            <Button
-              className="hidden py-3 border-none lg:block"
-              shadow={isDarkMode ? "custom" : undefined}
-              size="default"
-              rounded={"md"}
-            >
-              ورود | عضویت
-            </Button>
-          </Link>
+          {token ? (
+            <div>
+              {dataUser && dataUser[0] && dataUser[0].name ? (
+                <div className="items-center hidden lg:flex gap-x-2">
+                  <div
+                    className={`flex flex-col gap-y-1 ${
+                      useisPersian(dataUser[0].name)
+                        ? "text-right"
+                        : "text-left"
+                    }`}
+                  >
+                    <Typography
+                      as="p"
+                      weight="medium"
+                      className={`text-[12px] ${
+                        useisPersian(dataUser[0].name)
+                          ? "dark:text-white"
+                          : "dark:text-gray-300"
+                      }`}
+                    >
+                      {dataUser[0].name}
+                    </Typography>
+                    <Typography
+                      as="p"
+                      weight="medium"
+                      className={`text-[12px] ${
+                        useisPersian(dataUser[0].lastname)
+                          ? "dark:text-white"
+                          : "dark:text-gray-300"
+                      }`}
+                    >
+                      {dataUser[0].lastname}
+                    </Typography>
+                  </div>
+
+                  <MainAvatar name={dataUser[0].name} />
+                </div>
+              ) : (
+                <div
+                  className="items-center hidden space-x-4 lg:flex "
+                  dir="ltr"
+                >
+                  <Skeleton className="w-12 h-12 bg-white rounded-full" />
+                  <div className="space-y-2">
+                    <Skeleton className="h-4 w-[100px] bg-white" />
+                    <Skeleton className="h-4 w-[150px] bg-white" />
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link to={"/auth/Login"}>
+              <Button
+                className="hidden py-3 border-none lg:block"
+                shadow={isDarkMode ? "custom" : undefined}
+                size="default"
+                rounded={"md"}
+              >
+                ورود | عضویت
+              </Button>
+            </Link>
+          )}
         </div>
       </nav>
     </header>

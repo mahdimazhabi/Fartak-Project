@@ -35,7 +35,6 @@ export const RegistrationForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
     control,
     formState: { errors },
   } = useForm<IFormInput>({
@@ -50,7 +49,6 @@ export const RegistrationForm = () => {
       console.log("fetch data", error);
     } finally {
       setWaiting(false);
-      reset();
     }
   };
 

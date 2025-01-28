@@ -1,6 +1,6 @@
 import axios from "axios";
 import { LoginUser, RegisterUser } from "@/shared/interfaces/AuthInterface";
-import { useDataUser } from "@/shared/store/DataUser";
+import { useDataUser } from "@/shared/store/AllDataUserStore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -19,9 +19,7 @@ export const useAuthenticationApi = () => {
         }
       );
       if (response) {
-        console.log(response.data);
         setDataUser(response.data);
-        console.log("User Data Fetched Successfully");
       }
     } catch (error) {
       console.log(error);
@@ -38,9 +36,11 @@ export const useAuthenticationApi = () => {
           },
         }
       );
+      console.log(response);
 
       if (response.data.isSuccess) {
         localStorage.setItem("token", response.data.token.token);
+        localStorage.setItem("userId", response.data.user.userId);
         toast.success("ثبت نام با موفقیت انجام شد");
         setTimeout(() => {
           navigate("/", { replace: true });
@@ -69,7 +69,7 @@ export const useAuthenticationApi = () => {
       console.log(response);
 
       if (response) {
-        console.log("User Logged in Successfully");
+        // console.log("User Logged in Successfully");
         navigate("/", { replace: true });
         localStorage.setItem("token", response.data.token.token);
       }

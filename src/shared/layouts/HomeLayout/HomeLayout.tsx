@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useAuthenticationApi } from "@/api/Authentication/AuthenticationApi";
-import { useDataUser } from "@/shared/store/DataUser";
+import { useDataUser } from "@/shared/store/AllDataUserStore";
 import { useEffect } from "react";
 
 const HomeLayout = () => {
