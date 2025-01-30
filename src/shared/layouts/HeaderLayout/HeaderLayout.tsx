@@ -38,7 +38,7 @@ const HeaderLayout: React.FC = () => {
   return (
     <header className=" dark:bg-[#121e31] bg-slate-300 z-50 transition-opacity duration-300 mb-24">
       <nav
-        className={`flex justify-between items-center overflow-auto py-3 lg:p-5 w-full transition-all duration-75 transform fixed top-0 left-0 z-50 ${
+        className={`flex justify-between items-center overflow-auto py-3 lg:px-5 w-full transition-all duration-75 transform fixed top-0 left-0 z-50 ${
           scrollY > 0 ? "dark:bg-[#121e31] bg-slate-300 " : ""
         }`}
       >
@@ -100,7 +100,7 @@ const HeaderLayout: React.FC = () => {
               {dataUser && dataUser[0] && dataUser[0].name ? (
                 <div className="items-center hidden lg:flex gap-x-2">
                   <div
-                    className={`flex flex-col gap-y-1 ${
+                    className={`flex flex-col gap-y-1  ${
                       useisPersian(dataUser[0].name)
                         ? "text-right"
                         : "text-left"

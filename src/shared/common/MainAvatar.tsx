@@ -13,7 +13,7 @@ interface Props {
 
 const MainAvatar = ({ className, src, name }: Props) => {
   return (
-    <Avatar className={cn("w-14 h-14 border p-2 ", className)}>
+    <Avatar className={cn("w-11 h-11 border p-2 ", className)}>
       <AvatarImage src={src} alt={name} title={name} />
       <AvatarFallback>
         <UserRound className="w-full h-full text-gray-500 dark:text-gray-400" />
