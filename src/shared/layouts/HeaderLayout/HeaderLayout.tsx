@@ -100,7 +100,7 @@ const HeaderLayout: React.FC = () => {
               {dataUser && dataUser[0] && dataUser[0].name ? (
                 <div className="items-center hidden lg:flex gap-x-2">
                   <div
-                    className={`flex flex-col gap-y-1  ${
+                    className={`flex flex-row gap-x-2  ${
                       useisPersian(dataUser[0].name)
                         ? "text-right"
                         : "text-left"
@@ -134,7 +134,7 @@ const HeaderLayout: React.FC = () => {
                 </div>
               ) : (
                 <div
-                  className="items-center hidden space-x-4 lg:flex "
+                  className="items-center hidden space-x-4 lg:flex"
                   dir="ltr"
                 >
                   <Skeleton className="w-12 h-12 bg-white rounded-full" />

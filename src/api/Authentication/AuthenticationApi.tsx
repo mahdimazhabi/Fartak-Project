@@ -68,11 +68,11 @@ export const useAuthenticationApi = () => {
       );
       console.log(response);
 
-      if (response) {
-        // console.log("User Logged in Successfully");
+      if (response.data.isSuccess) {
+        toast.success("خوش آمدید");
         navigate("/", { replace: true });
         localStorage.setItem("token", response.data.token.token);
-      }
+      } else toast.error(response.data.message);
     } catch (error) {
       console.log(error);
     }
