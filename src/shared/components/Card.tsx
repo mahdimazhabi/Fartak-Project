@@ -10,7 +10,7 @@ interface TypeCardProps {
     NameTeacher: string;
     TitleCourses: string;
     score: string;
-    price: string;
+    price: number;
     people: string;
   };
 }

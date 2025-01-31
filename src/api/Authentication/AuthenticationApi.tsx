@@ -50,7 +50,6 @@ export const useAuthenticationApi = () => {
         toast.error(response.data.message);
       }
     } catch (error: any) {
-      console.log(error);
       toast.error("خطا در ثبت نام");
       toast.error(error.data.message);
     }
@@ -67,7 +66,6 @@ export const useAuthenticationApi = () => {
           },
         }
       );
-      console.log(response);
 
       if (response.data.isSuccess) {
         toast.success("خوش آمدید");
@@ -77,8 +75,9 @@ export const useAuthenticationApi = () => {
         localStorage.setItem("token", response.data.token.token);
         localStorage.setItem("userId", response.data.user.userId);
       } else toast.error(response.data.message);
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      toast.error("خطا در ثبت نام");
+      toast.error(error.data.message);
     }
   };
   return { add, getDataUser, Login };

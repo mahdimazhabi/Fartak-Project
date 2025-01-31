@@ -8,24 +8,26 @@ import {
 
 const SlidersPage = () => {
   return (
-    <Pagination dir="ltr">
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-          <PaginationLink href="#">2</PaginationLink>
-          <PaginationLink href="#">3</PaginationLink>
-          <PaginationLink href="#">4</PaginationLink>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">{/* سایر المنت‌ها */}</div>
+      <Pagination dir="ltr" className="w-full   flex justify-center">
+        <PaginationContent>
           <PaginationItem>
-            <PaginationEllipsis />
+            <PaginationLink href="#">1</PaginationLink>
+            <PaginationLink href="#">2</PaginationLink>
+            <PaginationLink href="#">3</PaginationLink>
+            <PaginationLink href="#">4</PaginationLink>
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+            <PaginationLink href="#">9</PaginationLink>
+            <PaginationLink href="#">10</PaginationLink>
+            <PaginationLink href="#">11</PaginationLink>
           </PaginationItem>
-          <PaginationLink href="#">9</PaginationLink>
-          <PaginationLink href="#">10</PaginationLink>
-          <PaginationLink href="#">11</PaginationLink>
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+        </PaginationContent>
+      </Pagination>
+    </div>
   );
 };
 
 export default SlidersPage;
-//ltr
