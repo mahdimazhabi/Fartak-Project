@@ -42,6 +42,7 @@ export const RegistrationForm = () => {
   });
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    console.log(data);
     try {
       setWaiting(true);
       await add(data);

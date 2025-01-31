@@ -7,6 +7,7 @@ import { toast } from "sonner";
 export const useAuthenticationApi = () => {
   const { setDataUser } = useDataUser();
   const navigate = useNavigate();
+
   const getDataUser = async () => {
     try {
       const response = await axios.post(
@@ -70,8 +71,11 @@ export const useAuthenticationApi = () => {
 
       if (response.data.isSuccess) {
         toast.success("خوش آمدید");
-        navigate("/", { replace: true });
+        setTimeout(() => {
+          navigate("/", { replace: true });
+        }, 3000);
         localStorage.setItem("token", response.data.token.token);
+        localStorage.setItem("userId", response.data.user.userId);
       } else toast.error(response.data.message);
     } catch (error) {
       console.log(error);
