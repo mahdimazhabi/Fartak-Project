@@ -9,7 +9,7 @@ interface TypeCardProps {
     profile: string;
     NameTeacher: string;
     TitleCourses: string;
-    score: string;
+    score: number;
     price: number;
     people: string;
   };

@@ -10,6 +10,7 @@ import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
 const UrgentProjects = () => {
   const { getList } = useProjectApi();
   const { dataProjects } = useDataProjectStore();
+  console.log(dataProjects);
 
   useEffect(() => {
     getList();
@@ -60,13 +61,13 @@ const UrgentProjects = () => {
             <SwiperSlide key={item.projectId}>
               <Card
                 dataCard={{
-                  img: item.image,
+                  img: `https://www.backendtestali.ir/upload/Projects/${item.image}`,
                   title: item.title,
                   descreption: item.description,
-                  profile: item.image,
+                  profile: `https://www.backendtestali.ir/upload/Projects/${item.image}`,
                   NameTeacher: item.description,
                   TitleCourses: item.title,
-                  score: item.title,
+                  score: item.projectTypeId,
                   price: item.price,
                   people: "12",
                 }}
