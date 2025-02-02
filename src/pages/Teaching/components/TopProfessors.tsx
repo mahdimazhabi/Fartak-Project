@@ -1,5 +1,5 @@
 import { useState } from "react";
-import svg from "@/assets/Img/Group 76.svg";
+import { GroupIcon } from "@/assets";
 import img from "@/assets/Img/image 11.png";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -9,16 +9,24 @@ const professors = [
     id: 1,
     name: "علی ذاکری",
     img,
-    svg,
     expertise: ["تدریس آنلاین", "برنامه نویسی"],
   },
-  { id: 2, name: "محمد رضایی", img, svg, expertise: ["تدریس حضوری", "گرافیک"] },
-  { id: 3, name: "سارا محمدی", img, svg, expertise: ["تدریس آنلاین", "ریاضی"] },
+  {
+    id: 2,
+    name: "محمد رضایی",
+    img,
+    expertise: ["تدریس حضوری", "گرافیک"],
+  },
+  {
+    id: 3,
+    name: "سارا محمدی",
+    img,
+    expertise: ["تدریس آنلاین", "ریاضی"],
+  },
   {
     id: 4,
     name: "زهرا اکبری",
     img,
-    svg,
     expertise: ["تدریس حضوری", "زبان انگلیسی"],
   },
 ];
@@ -76,7 +84,7 @@ const TopProfessors = () => {
               />
               <div className="flex items-center gap-2 mt-2">
                 <p className="text-lg font-medium">{prof.name}</p>
-                <img className="w-6 h-6" src={prof.svg} alt="icon" />
+                <GroupIcon className="w-6 h-6" />
               </div>
               <div className="space-y-1 text-center mt-2">
                 {prof.expertise.map((exp, index) => (

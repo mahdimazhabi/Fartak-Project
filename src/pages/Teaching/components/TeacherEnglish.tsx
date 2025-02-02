@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import svg from "@/assets/Img/Group 76.svg";
+import { GroupIcon } from "@/assets";
 import img from "@/assets/Img/image 11.png";
 import { ChevronDown } from "lucide-react";
 const TeacherEnglish = () => {
@@ -44,7 +44,7 @@ const TeacherEnglish = () => {
             />
             <div className="flex items-center gap-2 mt-2">
               <p className="text-lg font-medium">{prof.name}</p>
-              <img className="w-6 h-6" src={svg} alt="Expertise icon" />
+              <GroupIcon className="w-6 h-6" />
             </div>
             <div className="space-y-1 text-center mt-2">
               {prof.expertise.map((exp, index) => (

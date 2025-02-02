@@ -1,18 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { useAuthenticationApi } from "@/api/Authentication/AuthenticationApi";
-import { useDataUser } from "@/shared/store/AllDataUserStore";
-import { useEffect } from "react";
+import HoverComponetsTeacher from "@/shared/components/HoverComponetsTeacher";
 
 const HomeLayout = () => {
-  const { getDataUser } = useAuthenticationApi();
-  const { dataUser } = useDataUser();
-  console.log(dataUser);
-
-  useEffect(() => {
-    getDataUser();
-  }, []);
   return (
     <>
+      <HoverComponetsTeacher />
       <Outlet />
     </>
   );
