@@ -38,4 +38,5 @@ const CoursesHeader = ({ dataHeader, title }: TypeProps) => {
     </div>
   );
 };
+
 export default CoursesHeader;
