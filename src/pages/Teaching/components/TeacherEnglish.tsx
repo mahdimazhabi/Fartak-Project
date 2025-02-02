@@ -66,7 +66,7 @@ const TeacherEnglish = () => {
 
       <div className="flex justify-center py-32">
         <Button
-          className="bg-[#96A9FF5E] border-[#1D40D7] bottom-1  text-[#1D40D7] rounded-md p-6 hover:text-white"
+          className="bg-[#96A9FF5E] dark:bg-[#1D40D7] dark:text-white border-[#1D40D7] bottom-1  text-[#1D40D7] rounded-md p-6 hover:text-white"
           icon={ChevronDown}
           size={"md"}
         >
