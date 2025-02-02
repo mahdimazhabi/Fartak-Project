@@ -2,10 +2,6 @@ import { RouteObject } from "react-router-dom";
 import Login from "@/pages/Authentication/components/login";
 import Registration from "@/pages/Authentication/components/Registration";
 import RootLayout from "@/shared/layouts/RootLayout/RootLayout";
-import HeroSection from "@/pages/Home/components/HeroSection/HeroSection";
-import TopCourses from "@/pages/Home/components/TopCourses/TopCourses";
-import Services from "@/pages/Home/components/Services/Services";
-import Professors from "@/pages/Home/components/Professors/Professors";
 import AuthLayout from "@/shared/layouts/AuthLayout/AuthLayout";
 import CourserTrainingcourse from "@/pages/Courses/components/CourserTrainingcourse";
 import BlogHeroSwction from "@/pages/Blog/components/BlogHeroSection";
@@ -42,19 +38,6 @@ export const AllRouters: RouteObject[] = [
       {
         path: "/",
         element: <HomeLayout />,
-        children: [
-          {
-            path: "/",
-            element: (
-              <>
-                <HeroSection />
-                <TopCourses />
-                <Services />
-                <Professors />
-              </>
-            ),
-          },
-        ],
       },
       {
         path: "/Courses",
