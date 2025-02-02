@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 import CoursesTeaching from "@/pages/Teaching/components/CoursesTeaching";
 import TopProfessors from "@/pages/Teaching/TopProfessors";
+import TeachingFartak from "@/pages/Teaching/components/TeachingFartak";
 const TeachingLayout = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const TeachingLayout = () => {
       />
       <CoursesTeaching />
       <TopProfessors />
+      <TeachingFartak />
       <Outlet />
     </>
   );
