@@ -11,15 +11,15 @@ import Img10 from "@/assets/Img/imageCourses10.png";
 
 const courses = [
   { img: Img1, title: "برنامه نویسی" },
-  { img: Img2, title: "طراحی وب" },
-  { img: Img3, title: "هوش مصنوعی" },
-  { img: Img4, title: "داده‌کاوی" },
-  { img: Img5, title: "امنیت سایبری" },
-  { img: Img6, title: "شبکه‌های کامپیوتری" },
-  { img: Img7, title: "توسعه فرانت‌اند" },
-  { img: Img8, title: "توسعه بک‌اند" },
-  { img: Img9, title: "مدیریت پایگاه داده" },
-  { img: Img10, title: "طراحی تجربه کاربری" },
+  { img: Img2, title: "آمار و داده‌کاوی" },
+  { img: Img3, title: "مهندسی مکانیک" },
+  { img: Img4, title: "پایتون" },
+  { img: Img5, title: "بورس و سهام" },
+  { img: Img6, title: "هنر " },
+  { img: Img7, title: "ریاضیات " },
+  { img: Img8, title: "هوش مصنوعی " },
+  { img: Img9, title: "اکسل " },
+  { img: Img10, title: "مهندسی برق " },
 ];
 
 const CoursesTeaching = () => {
