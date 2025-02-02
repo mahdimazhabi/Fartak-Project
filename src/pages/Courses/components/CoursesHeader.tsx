@@ -1,7 +1,6 @@
 import { BookOpenCheck } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Img from "@/assets/Img/image 14.png";
 
 interface TypeProps {
   title: string;
@@ -36,16 +35,7 @@ const CoursesHeader = ({ dataHeader, title }: TypeProps) => {
           ))}
         </ul>
       </div>
-
-      <div className="px-4 mt-9 sm:px-11">
-        <img
-          src={Img}
-          alt=""
-          className="w-full h-auto max-h-[300px] sm:max-h-[515px] mx-auto rounded-lg border-2 border-blue-700"
-        />
-      </div>
     </div>
   );
 };
-
 export default CoursesHeader;

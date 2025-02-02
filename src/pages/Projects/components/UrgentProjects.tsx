@@ -10,7 +10,6 @@ import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
 const UrgentProjects = () => {
   const { getList } = useProjectApi();
   const { dataProjects } = useDataProjectStore();
-  console.log(dataProjects);
 
   useEffect(() => {
     getList();
