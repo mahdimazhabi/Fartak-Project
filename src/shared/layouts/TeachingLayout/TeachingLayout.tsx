@@ -1,7 +1,8 @@
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 import CoursesTeaching from "@/pages/Teaching/components/CoursesTeaching";
-import TopProfessors from "@/pages/Teaching/TopProfessors";
+import TopProfessors from "@/pages/Teaching/components/TopProfessors";
 import TeachingFartak from "@/pages/Teaching/components/TeachingFartak";
+import TeacherEnglish from "@/pages/Teaching/components/TeacherEnglish";
 const TeachingLayout = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const TeachingLayout = () => {
       <CoursesTeaching />
       <TopProfessors />
       <TeachingFartak />
+      <TeacherEnglish />
     </>
   );
 };

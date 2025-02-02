@@ -113,8 +113,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             loading && "opacity-0"
           )}
         >
-          {Icon && <Icon />}
           {children}
+          {Icon && <Icon />}
         </div>
         <Loader
           className={cn(
