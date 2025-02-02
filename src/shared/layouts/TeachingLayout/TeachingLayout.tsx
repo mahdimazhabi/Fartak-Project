@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 import CoursesTeaching from "@/pages/Teaching/components/CoursesTeaching";
 import TopProfessors from "@/pages/Teaching/TopProfessors";
@@ -21,7 +20,6 @@ const TeachingLayout = () => {
       <CoursesTeaching />
       <TopProfessors />
       <TeachingFartak />
-      <Outlet />
     </>
   );
 };
