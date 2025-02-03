@@ -14,11 +14,11 @@ export const AllRouters: RouteObject[] = [
     element: <AuthLayout />,
     children: [
       {
-        path: "/auth/Login",
+        path: "/auth/login",
         element: <Login />,
       },
       {
-        path: "/auth/Registration",
+        path: "/auth/registration",
         element: <Registration />,
       },
     ],
@@ -33,19 +33,19 @@ export const AllRouters: RouteObject[] = [
         element: <HomeLayout />,
       },
       {
-        path: "/Courses",
+        path: "/courses",
         element: <CoursesLayout />,
       },
       {
-        path: "/Blog",
+        path: "/blog",
         element: <BlogLayout />,
       },
       {
-        path: "/Projects",
+        path: "/projects",
         element: <ProjectsLayout />,
       },
       {
-        path: "/Teaching",
+        path: "/teaching",
         element: <TeachingLayout />,
       },
     ],

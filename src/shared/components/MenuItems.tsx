@@ -8,23 +8,23 @@ const MenuItems = () => {
           خانه
         </li>
       </Link>
-      <Link to="/Teaching">
+      <Link to="/teaching">
         <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">
           تدریس
         </li>
       </Link>
-      <Link to="/Projects">
+      <Link to="/projects">
         <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">
           پروژه ها
         </li>
       </Link>
-      <Link to="/Courses">
+      <Link to="/courses">
         <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">
           دوره ها
         </li>
       </Link>
       <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">
-        <Link to="/Blog">وبلاگ</Link>
+        <Link to="/blog">وبلاگ</Link>
       </li>
       <Link to="">
         <li className="w-full p-2 rounded dark:hover:bg-white/10 hover:bg-blue-700 hover:text-white lg:w-auto">

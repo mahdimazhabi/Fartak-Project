@@ -146,7 +146,7 @@ const HeaderLayout: React.FC = () => {
               )}
             </div>
           ) : (
-            <Link to={"/auth/Login"}>
+            <Link to={"/auth/login"}>
               <Button
                 className="hidden py-3 border-none lg:block"
                 shadow={isDarkMode ? "custom" : undefined}

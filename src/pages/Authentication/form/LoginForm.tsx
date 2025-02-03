@@ -76,7 +76,7 @@ export const LoginForm = () => {
         </div>
 
         <div className="flex justify-center mt-4">
-          <Link to={"/auth/Registration"}>
+          <Link to={"/auth/registration"}>
             <span className="font-bold  text-sm">
               نقش دیگری دارید؟
               <span className="text-[#5171FC] text-sm">عضویت</span>
