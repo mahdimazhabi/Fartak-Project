@@ -42,17 +42,6 @@ export const AllRouters: RouteObject[] = [
       {
         path: "/Courses",
         element: <CoursesLayout />,
-        children: [
-          {
-            path: "/Courses",
-            element: (
-              <>
-                <CourserTrainingcourse />
-                <SlidersPage />
-              </>
-            ),
-          },
-        ],
       },
       {
         path: "/Blog",
