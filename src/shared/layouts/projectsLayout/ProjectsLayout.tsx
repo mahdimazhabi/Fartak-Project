@@ -1,5 +1,7 @@
-import { Outlet } from "react-router-dom";
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
+import TopProjects from "@/pages/Projects/components/TopProjects";
+import UrgentProjects from "@/pages/Projects/components/UrgentProjects";
+import SlidersPage from "@/shared/components/SlidersPage";
 
 const ProjectsLayout = () => {
   return (
@@ -16,8 +18,9 @@ const ProjectsLayout = () => {
           { id: 7, title: " موسیقی", url: "" },
         ]}
       />
-
-      <Outlet />
+      <TopProjects />
+      <UrgentProjects />
+      <SlidersPage />
     </>
   );
 };
