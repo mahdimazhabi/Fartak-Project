@@ -1,8 +1,6 @@
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
-import TopProjects from "@/pages/Projects/components/TopProjects";
-import UrgentProjects from "@/pages/Projects/components/UrgentProjects";
 import SlidersPage from "@/shared/components/SlidersPage";
-
+import Project from "@/pages/Projects/components/Project";
 const ProjectsLayout = () => {
   return (
     <>
@@ -18,8 +16,7 @@ const ProjectsLayout = () => {
           { id: 7, title: " موسیقی", url: "" },
         ]}
       />
-      <TopProjects />
-      <UrgentProjects />
+      <Project />
       <SlidersPage />
     </>
   );
