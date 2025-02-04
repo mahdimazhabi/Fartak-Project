@@ -1,11 +1,8 @@
 import axios from "axios";
-// import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
 import { useQuery } from "@tanstack/react-query";
 
 const useProjectApi = () => {
-  // const { setDataProjects } = useDataProjectStore();
-
-  const { data, isPending } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["listProjects"],
     queryFn: async function () {
       const response = await axios.post(
@@ -19,9 +16,11 @@ const useProjectApi = () => {
       );
       return response.data;
     },
+    staleTime: 500,
+    retry: 3,
   });
 
-  return { data, isPending };
+  return { data, isLoading, error };
 };
 
 export default useProjectApi;
