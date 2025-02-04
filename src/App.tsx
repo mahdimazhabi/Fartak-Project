@@ -4,9 +4,9 @@ import ThemeProvider from "./shared/providers/ThemeProvider";
 function App() {
   const router = createBrowserRouter(AllRouters);
   return (
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
 

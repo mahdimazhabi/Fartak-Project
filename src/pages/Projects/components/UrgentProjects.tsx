@@ -4,16 +4,11 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import useProjectApi from "@/api/Project/ProjectApi";
-import { useEffect } from "react";
-import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
+import { getList } from "@/shared/interfaces/ProjectInterface";
 
 const UrgentProjects = () => {
-  const { getList } = useProjectApi();
-  const { dataProjects } = useDataProjectStore();
-
-  useEffect(() => {
-    getList();
-  }, []);
+  const { data } = useProjectApi();
+  console.log("Fetched Data:", data);
 
   return (
     <section className="gap-10 px-5 pt-48 lg:px-20 md:px-10">
@@ -26,7 +21,7 @@ const UrgentProjects = () => {
       />
 
       {/* Swiper */}
-      {dataProjects.length > 0 ? (
+      {data?.projects && data.projects.length > 0 ? (
         <Swiper
           spaceBetween={10}
           slidesPerView={4}
@@ -56,14 +51,18 @@ const UrgentProjects = () => {
             },
           }}
         >
-          {dataProjects.map((item) => (
+          {data.projects.map((item: getList) => (
             <SwiperSlide key={item.projectId}>
               <Card
                 dataCard={{
-                  img: `https://www.backendtestali.ir/upload/Projects/${item.image}`,
+                  img: `https://www.backendtestali.ir/upload/Projects/${
+                    item.image || "default.jpg"
+                  }`,
                   title: item.title,
                   descreption: item.description,
-                  profile: `https://www.backendtestali.ir/upload/Projects/${item.image}`,
+                  profile: `https://www.backendtestali.ir/upload/Projects/${
+                    item.image || "default.jpg"
+                  }`,
                   NameTeacher: item.description,
                   TitleCourses: item.title,
                   score: item.projectTypeId,
@@ -75,11 +74,12 @@ const UrgentProjects = () => {
           ))}
         </Swiper>
       ) : (
-        <div className="flex justify-center mt-80">
-          <span>پروژه ای وجود ندارد</span>
+        <div className="flex justify-center mt-20">
+          <span>پروژه‌ای وجود ندارد</span>
         </div>
       )}
     </section>
   );
 };
+
 export default UrgentProjects;

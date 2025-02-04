@@ -16,8 +16,8 @@ import {
 const HoverComponetsTeacher = () => {
   return (
     <section className="p-11 w-full  absolute  top-[7rem]">
-      <div className="bg-[#FFFFFF] dark:bg-slate-800 p-6   rounded-lg z-50">
-        <ul className="flex flex-col items-start space-y-4 w-full border-l-4 max-w-fit pl-6 ">
+      <div className="bg-[#FFFFFF] dark:bg-slate-800    rounded-lg z-50">
+        <ul className="flex flex-col items-start space-y-4 w-full border-l-4 max-w-fit  ">
           <li className="flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
             <BocKIcon />
             <span>ابتدایی</span>
@@ -30,13 +30,13 @@ const HoverComponetsTeacher = () => {
             <BackpackIcon />
             <span>متوسطه دوم</span>
           </li>
-          <li className="relative left-2 flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
-            <GraduationcapIcon />
-            <span>کنکور سراری</span>
-          </li>
           <li className="flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
             <ForeignlanguageIcon />
             <span>زبان های خارجی</span>
+          </li>
+          <li className=" flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
+            <GraduationcapIcon />
+            <span>کنکور سراری</span>
           </li>
           <li className="flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
             <BocK2Icon />
@@ -62,7 +62,7 @@ const HoverComponetsTeacher = () => {
             <SkillIcon />
             <span>هنر و مهارت ها</span>
           </li>
-          <li className="relative left-2 flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
+          <li className=" flex items-center cursor-pointer text-black dark:text-white font-medium text-base  dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
             <ExerciseIcon />
             <span>ورزش</span>
           </li>

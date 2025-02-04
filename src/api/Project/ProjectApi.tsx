@@ -1,11 +1,13 @@
 import axios from "axios";
-import { toast } from "sonner";
-import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
+// import { useDataProjectStore } from "@/shared/store/AllDataProjectsStore";
+import { useQuery } from "@tanstack/react-query";
 
 const useProjectApi = () => {
-  const { setDataProjects } = useDataProjectStore();
-  const getList = async () => {
-    try {
+  // const { setDataProjects } = useDataProjectStore();
+
+  const { data, isPending } = useQuery({
+    queryKey: ["listProjects"],
+    queryFn: async function () {
       const response = await axios.post(
         "https://www.backendtestali.ir/api/Projects/GetAll",
         {},
@@ -15,16 +17,11 @@ const useProjectApi = () => {
           },
         }
       );
+      return response.data;
+    },
+  });
 
-      if (response) {
-        console.log(response);
-        setDataProjects(response.data.projects);
-      }
-    } catch (error: any) {
-      toast.error(error.data.message);
-    }
-  };
-  return { getList };
+  return { data, isPending };
 };
 
 export default useProjectApi;
