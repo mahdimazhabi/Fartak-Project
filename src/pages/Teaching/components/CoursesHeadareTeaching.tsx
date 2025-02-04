@@ -37,11 +37,11 @@ const CoursesHeadareTeaching = () => {
     <div>
       <div className="lg:flex hidden flex-col sm:flex-row items-center lg:border-2 border-[#E7E7E7] px-4 py-3 ">
         <span
-          className="flex items-center sm:border-b-0 sm:border-l-2  cursor-pointer border-[#E7E7E7] text-[#929292] dark:text-white gap-4 pb-3 sm:pb-0 sm:pl-7"
+          className="flex items-center sm:border-b-0 sm:border-l-2 text-xs  cursor-pointer border-[#E7E7E7] text-[#929292] dark:text-white gap-4 pb-3 sm:pb-0 sm:pl-7"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <BookOpenCheck />
+          <BookOpenCheck size={18} />
           همه دروس
         </span>
 
@@ -50,7 +50,7 @@ const CoursesHeadareTeaching = () => {
             <Link to={item.url} key={item.id}>
               <li
                 onClick={() => setItems(item.id)}
-                className={`text-[#929292] dark:text-white font-bold px-2 sm:px-6 py-2 rounded-lg transition-all duration-500 ${
+                className={`text-[#929292] dark:text-white  text-xs font-bold px-2  py-2 rounded-lg transition-all duration-500 ${
                   items === item.id
                     ? "bg-blue-700 text-white opacity-100 delay-100"
                     : "opacity-50"

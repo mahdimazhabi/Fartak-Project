@@ -12,28 +12,28 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        iranyekan: ["iranyekan", "sans-serif"], // فونت پیش‌فرض
+        iranyekan: ["iranyekan", "sans-serif"],
       },
       colors: {
         button: {
-          background: "var(--button-background-color)", // رنگ پیش‌فرض دکمه‌ها
+          background: "var(--button-background-color)",
           border: "var(--button-border-color)",
         },
         calendar: {
           "active-bg": "var(--calendar-active-bg)",
           "active-bg-dark": "var(--calendar-active-bg-dark)",
-          active: "#0088FF", // رنگ فعال تقویم
+          active: "#0088FF",
           "done-bg": "var(--calendar-done-bg)",
           "done-bg-dark": "var(--done-bg-dark)",
-          done: "#3C9A4F", // رنگ انجام شده
+          done: "#3C9A4F",
           "pending-bg": "var(--calendar-pending-bg)",
-          pending: "#DE710C", // رنگ در حال انتظار
+          pending: "#DE710C",
           "deadline-bg": "var(--calendar-deadline-bg)",
-          deadline: "#FC4D55", // رنگ ضرب‌العجل
+          deadline: "#FC4D55",
         },
         background: {
-          light: "#FFFFFF", // رنگ روشن پس‌زمینه
-          dark: "#121E31", // رنگ تیره پس‌زمینه
+          light: "#FFFFFF",
+          dark: "#121E31",
         },
       },
       transitionProperty: {
@@ -41,8 +41,8 @@ export default {
         colors: "background-color, border-color, color, fill, stroke",
         dimensions: "width, height, margin, padding",
         spacing: "margin, padding, gap",
-        opacity: "opacity", // اضافه شده برای اطمینان از کارکرد transitions
-        transform: "transform", // برای انیمیشن‌های translate و rotate
+        opacity: "opacity",
+        transform: "transform",
       },
       transitionDuration: {
         75: "75ms",
@@ -57,10 +57,10 @@ export default {
       transitionTimingFunction: {
         linear: "linear",
         "in-out": "ease-in-out",
-        "ease-custom": "cubic-bezier(0.4, 0, 0.2, 1)", // ease سفارشی
+        "ease-custom": "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       animation: {
-        fade: "fadeIn 0.5s ease-in-out", // انیمیشن fade
+        fade: "fadeIn 0.5s ease-in-out",
         slideIn: "slideIn 0.5s ease-in-out",
         slideOut: "slideOut 0.5s ease-in-out",
       },
@@ -79,7 +79,7 @@ export default {
         },
       },
       boxShadow: {
-        custom: "0px 4px 10px rgba(0, 0, 0, 0.1)", // سایه سفارشی
+        custom: "0px 4px 10px rgba(0, 0, 0, 0.1)",
       },
     },
   },

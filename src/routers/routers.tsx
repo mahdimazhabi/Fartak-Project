@@ -6,7 +6,7 @@ import AuthLayout from "@/shared/layouts/AuthLayout/AuthLayout";
 import TeachingLayout from "@/shared/layouts/TeachingLayout/TeachingLayout";
 import HomeLayout from "@/shared/layouts/HomeLayout/HomeLayout";
 import CoursesLayout from "@/shared/layouts/CourseLayout/CoursesLayout";
-import BlogLayout from "@/shared/layouts/BogLayout/BlogLayout";
+import BlogLayout from "@/shared/layouts/BlogLayout/BlogLayout";
 import ProjectsLayout from "@/shared/layouts/projectsLayout/ProjectsLayout";
 export const AllRouters: RouteObject[] = [
   {

@@ -8,7 +8,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SidBarMenu } from "@/shared/components/SidBarMenu";
-import MenuItems from "../../components/MenuItems";
+import MenuItems from "./MenuItems";
 import { useEffect, useState } from "react";
 import useDataUserById from "@/shared/action/GetDataUser";
 import { useUniqueUserDataStore } from "@/shared/store/UniqueUserDataStore";
@@ -17,7 +17,7 @@ import { Typography } from "@/shared/common/Typography";
 import MainAvatar from "@/shared/common/MainAvatar";
 import useisPersian from "@/shared/hook/useispersian";
 
-const HeaderLayout: React.FC = () => {
+const Header: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const isTablet = useMediaQuery("(max-width:428)");
@@ -36,10 +36,10 @@ const HeaderLayout: React.FC = () => {
   }, []);
 
   return (
-    <header className=" dark:bg-[#121e31] bg-slate-300 z-50 transition-opacity duration-300 mb-24">
+    <header className=" dark:bg-[#F8F9FA] bg-slate-300 z-50 transition-opacity duration-300 mb-24">
       <nav
         className={`flex justify-between items-center overflow-auto py-3 lg:px-5 w-full transition-all duration-75 transform fixed top-0 left-0 z-50 ${
-          scrollY > 0 ? "dark:bg-[#121e31] bg-slate-300 " : ""
+          scrollY > 0 ? "dark:bg-[#212529] bg-slate-300 " : ""
         }`}
       >
         {(isMobile || isTablet) && <SidBarMenu />}
@@ -59,13 +59,13 @@ const HeaderLayout: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 lg:gap-8">
+        <div className="flex items-center gap-4 lg:gap-4">
           <div className="hidden lg:block">
             <Input
               icon={Search}
               iconPosition="left"
               rounded="md"
-              className="w-[228px] h-[49px]"
+              className="w-[228px] h-[40px] placeholder:text-xs"
               placeholder="دنبال چی میگردی؟"
             />
           </div>
@@ -76,7 +76,7 @@ const HeaderLayout: React.FC = () => {
             size={"icon"}
             shadow={"none"}
           >
-            {isDarkMode ? <Sun /> : <Moon />}
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </Button>
           {isMobile ? (
             <Link to={"/auth/Login"}>
@@ -88,19 +88,14 @@ const HeaderLayout: React.FC = () => {
               />
             </Link>
           ) : (
-            <Button
-              className="border-none bg-inherit hover:bg-inherit"
-              icon={ShoppingBag}
-              size={"icon"}
-              shadow={"none"}
-            />
+            <ShoppingBag size={18} />
           )}
           {token ? (
             <div>
               {dataUser && dataUser[0] && dataUser[0].name ? (
                 <div className="items-center hidden lg:flex gap-x-2">
                   <div
-                    className={`flex flex-row gap-x-2  ${
+                    className={`flex flex-row gap-x-1  ${
                       useisPersian(dataUser[0].name)
                         ? "text-right"
                         : "text-left"
@@ -109,7 +104,7 @@ const HeaderLayout: React.FC = () => {
                     <Typography
                       as="p"
                       weight="medium"
-                      className={`text-[12px] ${
+                      className={`text-xs ${
                         useisPersian(dataUser[0].name)
                           ? "dark:text-white"
                           : "dark:text-gray-300"
@@ -120,7 +115,7 @@ const HeaderLayout: React.FC = () => {
                     <Typography
                       as="p"
                       weight="medium"
-                      className={`text-[12px] ${
+                      className={`text-xs ${
                         useisPersian(dataUser[0].lastname)
                           ? "dark:text-white"
                           : "dark:text-gray-300"
@@ -163,4 +158,4 @@ const HeaderLayout: React.FC = () => {
   );
 };
 
-export default HeaderLayout;
+export default Header;

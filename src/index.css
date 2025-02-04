@@ -60,13 +60,13 @@
 }
 
 .light {
-  --background-color: #f8f9fa; /* رنگ روشن نزدیک به سفید */
-  --text-color: #2e3a46; /* متن طوسی مایل به آبی */
+  --background-color: #f8f9fa;
+  --text-color: #2e3a46;
 }
 
 .dark {
-  --background-color: #111827; /* آبی تیره برای پس‌زمینه */
-  --text-color: #d1d5db; /* متن طوسی روشن */
+  --background-color: #212529;
+  --text-color: #d1d5db;
 }
 
 @layer base {
@@ -82,7 +82,7 @@
 
 /* استایل اسکرول بار */
 ::-webkit-scrollbar {
-  width: 8px; /* عرض اسکرول بار */
+  width: 4px; /* عرض اسکرول بار */
 }
 
 ::-webkit-scrollbar-track {
