@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
+import "@/shared/CoustomStyle/imdex.css";
 
 const HeroSection = () => {
   return (
@@ -27,12 +28,14 @@ const HeroSection = () => {
           <p className="mt-4 text-lg font-bold text-gray-600 dark:text-gray-300">
             یادگیری مهارت‌های جدید هیچ‌وقت این‌قدر ساده و کاربردی نبوده است.
           </p>
-          <div className="items-center gap-4 mt-10 lg:flex lg:justify-stretch">
+          <div className="items-center gap-8 mt-10 lg:flex lg:justify-stretch">
             <div>
-              <Button className="p-6 bg-blue-500" rounded={"full"}>
-                از این مسیر ها شروع کن{" "}
-                <MoveLeft size={25} className=" relative top-0.5 mr-2" />
-              </Button>
+              <Link to={""}>
+                <button className="bn29 flex gap-2 items-center">
+                  از این مسیر ها شروع کن
+                  <MoveLeft className="relative top-0.5" size={28} />
+                </button>
+              </Link>
             </div>
             <div className="flex items-center justify-center gap-4 mt-10 font-medium lg:mt-0 md:mt-0">
               <span>دوره های رایگان</span>

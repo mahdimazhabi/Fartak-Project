@@ -40,7 +40,7 @@ const Project = () => {
           >
             <div>
               <div className="p-9">
-                <h1 className="font-semibold text-[#E4911F] mb-4 hover:text-black">
+                <h1 className="font-semibold text-[#E4911F] mb-4 hover:text-black cursor-pointer">
                   {items.title}
                 </h1>
                 <div className="flex items-center mb-4">

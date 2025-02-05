@@ -15,7 +15,7 @@ interface TypeCardProps {
   };
 }
 
-const Card = ({ dataCard }: TypeCardProps) => {
+const CardCourses = ({ dataCard }: TypeCardProps) => {
   const {
     img,
     title,
@@ -79,4 +79,4 @@ const Card = ({ dataCard }: TypeCardProps) => {
   );
 };
 
-export default Card;
+export default CardCourses;

@@ -1,7 +1,7 @@
 import Img from "@/assets/Img/image1.png";
 import Profile from "@/assets/Img/image.png";
 import TittleSection from "@/shared/components/TittleSection";
-import Card from "@/shared/components/Card";
+import CardCourses from "@/shared/components/CardCourses";
 
 const DataCourses = [
   {
@@ -212,7 +212,7 @@ const TopCourses = () => {
       {/* Map through DataCourses */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2">
         {DataCourses.map((item) => (
-          <Card
+          <CardCourses
             key={item.id}
             dataCard={{
               img: item.Img,

@@ -1,5 +1,5 @@
 import TittleSection from "@/shared/components/TittleSection";
-import Card from "@/shared/components/Card";
+import Card from "@/shared/components/CardCourses";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";

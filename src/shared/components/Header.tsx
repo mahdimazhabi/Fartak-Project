@@ -21,12 +21,6 @@ const Header: React.FC = () => {
   const token = localStorage.getItem("token");
   const { data } = useDataUserById();
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setDataUser(data);
-  //   }
-  // }, [data, setDataUser]);
-
   useEffect(() => {
     const handleScroll = () => {
       setscrollY(window.scrollY);
