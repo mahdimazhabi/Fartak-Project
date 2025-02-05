@@ -1,21 +1,20 @@
 import TittleSection from "@/shared/components/TittleSection";
-import Card from "@/shared/components/CardCourses";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import useProjectApi from "@/api/Project/ProjectApi";
 import { getList } from "@/shared/interfaces/ProjectInterface";
+import CardProjects from "@/shared/components/CardProjects";
 
 const UrgentProjects = () => {
   const { data } = useProjectApi();
-  console.log("Fetched Data:", data);
 
   return (
     <section className="gap-10 px-5 pt-48 lg:px-20 md:px-10">
       {/* Header */}
       <TittleSection
-        title="پروژه‌های برتر"
-        color="bg-yellow-600"
+        title="پروژه‌های فوری"
+        color="bg-red-600"
         titleCourse=""
         mode={false}
       />
@@ -53,21 +52,13 @@ const UrgentProjects = () => {
         >
           {data.projects.map((item: getList) => (
             <SwiperSlide key={item.projectId}>
-              <Card
-                dataCard={{
-                  img: `https://www.backendtestali.ir/upload/Projects/${
-                    item.image || "default.jpg"
-                  }`,
-                  title: item.title,
+              <CardProjects
+                dataCardProject={{
                   descreption: item.description,
-                  profile: `https://www.backendtestali.ir/upload/Projects/${
-                    item.image || "default.jpg"
-                  }`,
-                  NameTeacher: item.description,
-                  TitleCourses: item.title,
-                  score: item.projectTypeId,
+                  score: item.ownerId,
                   price: item.price,
-                  people: "12",
+                  timeProject: "14",
+                  TitleProject: item.title,
                 }}
               />
             </SwiperSlide>

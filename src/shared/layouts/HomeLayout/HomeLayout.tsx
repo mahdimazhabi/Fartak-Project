@@ -5,6 +5,7 @@ import TopCourses from "@/pages/Home/components/TopCourses";
 import Services from "@/pages/Home/components/Services";
 import Professors from "@/pages/Home/components/Professors";
 import TopProjects from "@/pages/Home/components/TopProjects";
+import UrgentProjects from "@/pages/Home/components/UrgentProjects";
 
 const HomeLayout = () => {
   return (
@@ -13,6 +14,7 @@ const HomeLayout = () => {
       <TopCourses />
       <TopProjects />
       <Services />
+      <UrgentProjects />
       <Professors />
       <Frequentlyaskedquestions />
       <Outlet />

@@ -2,7 +2,6 @@ import TittleSection from "@/shared/components/TittleSection";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import Img from "@/assets/Img/image1.png";
 import Profile from "@/assets/Img/image.png";
 import CardProjects from "@/shared/components/CardProjects";
 
@@ -10,9 +9,9 @@ const TopProjects = () => {
   const dataCard = [
     {
       id: 1,
-      Img: Img,
       title: "دوره‌های پرفروش",
-      descreption: "توضیح مختصر دوره",
+      descreption:
+        "این دوره‌ها شامل بهترین و پرفروش‌ترین آموزش‌ها هستند که توسط کاربران زیادی مورد توجه قرار گرفته‌اند. با گذراندن این دوره‌ها، می‌توانید مهارت‌های خود را در زمینه‌های مختلف تقویت کنید.",
       profile: Profile,
       TitleProjects: "موضوع دوره",
       score: 4.8,
@@ -21,11 +20,10 @@ const TopProjects = () => {
     },
     {
       id: 2,
-      Img: Img,
       title: "دوره‌های جدید",
-      descreption: "توضیح مختصر دوره جدید",
+      descreption:
+        "دوره‌های جدید شامل آموزش‌های به‌روز و مطابق با آخرین تغییرات صنعت هستند. این دوره‌ها به شما کمک می‌کنند تا همیشه یک قدم جلوتر از رقبایتان باشید.",
       profile: Profile,
-      NameTeacher: "استاد دیگر",
       TitleProjects: "موضوع جدید",
       score: 4.7,
       price: 300000,
@@ -33,9 +31,10 @@ const TopProjects = () => {
     },
     {
       id: 3,
-      Img: Img,
+
       title: "دوره‌های توسعه فردی",
-      descreption: "توضیح مختصر دوره توسعه فردی",
+      descreption:
+        "این دوره‌ها به شما کمک می‌کنند تا مهارت‌های فردی و روانشناسی خود را تقویت کرده و در زندگی شخصی و شغلی خود به موفقیت‌های بیشتری دست یابید.",
       profile: Profile,
       NameTeacher: "استاد سوم",
       TitleProjects: "موضوع توسعه فردی",
@@ -45,9 +44,10 @@ const TopProjects = () => {
     },
     {
       id: 4,
-      Img: Img,
+
       title: "دوره‌های تخصصی React",
-      descreption: "توضیح مختصر دوره React",
+      descreption:
+        "دوره‌های تخصصی React، بهترین انتخاب برای افرادی است که می‌خواهند در زمینه توسعه وب با استفاده از React به تخصص برسند. این دوره‌ها به صورت عملی و پروژه محور طراحی شده‌اند.",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
       TitleProjects: "دوره تخصصی React",
@@ -57,9 +57,10 @@ const TopProjects = () => {
     },
     {
       id: 5,
-      Img: Img,
+
       title: "دوره‌های تخصصی React",
-      descreption: "توضیح مختصر دوره React",
+      descreption:
+        "آموزش‌های تخصصی React به شما می‌آموزند تا با این کتابخانه قدرتمند به سرعت پروژه‌های حرفه‌ای و مقیاس‌پذیر بسازید. این دوره‌ها شامل موضوعات پیشرفته و چالش‌های عملی است.",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
       TitleProjects: "دوره تخصصی React",
@@ -69,9 +70,10 @@ const TopProjects = () => {
     },
     {
       id: 6,
-      Img: Img,
+
       title: "دوره‌های تخصصی React",
-      descreption: "توضیح مختصر دوره React",
+      descreption:
+        "دوره‌های تخصصی React برای کسانی که می‌خواهند به عمق مفاهیم React و طراحی اپلیکیشن‌های پیچیده بپردازند، طراحی شده‌اند. در این دوره‌ها، از جدیدترین تکنیک‌ها و ابزارها استفاده می‌شود.",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
       TitleProjects: "دوره تخصصی React",
@@ -81,11 +83,9 @@ const TopProjects = () => {
     },
     {
       id: 7,
-      Img: Img,
       title: "دوره‌های تخصصی React",
-      descreption: "توضیح مختصر دوره React",
-      profile: Profile,
-      NameTeacher: "استاد متخصص React",
+      descreption:
+        "در این دوره‌ها، شما با مفاهیم پیشرفته React آشنا می‌شوید و مهارت‌های خود را برای ساخت پروژه‌های واقعی تقویت می‌کنید. این دوره‌ها مناسب توسعه‌دهندگان حرفه‌ای است.",
       TitleProjects: "دوره تخصصی React",
       score: 5.0,
       price: 500000,
