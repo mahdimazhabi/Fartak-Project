@@ -19,7 +19,7 @@ const CoursesHeader = ({ dataHeader, title }: TypeProps) => {
         </span>
         <ul className="flex flex-wrap justify-center gap-4 mt-3 sm:gap-6 sm:pr-7 sm:mt-0">
           {dataHeader.map((item) => (
-            <Link to={item.url}>
+            <Link to={item.url} key={item.id}>
               <li
                 key={item.id}
                 onClick={() => setItems(item.id)}
