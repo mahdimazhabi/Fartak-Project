@@ -24,7 +24,7 @@ const TeachingFartak = () => {
             </span>
           </p>
           <Link to={"/"}>
-            <button className="bn30 flex items-center gap-2 ">
+            <button className="bn30 flex items-center gap-2   ">
               شروع تدریس
               <MoveLeft size={22} className=" relative top-0.5" />
             </button>
