@@ -1,10 +1,10 @@
 import TittleSection from "@/shared/components/TittleSection";
-import Card from "@/shared/components/CardCourses";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import Img from "@/assets/Img/image1.png";
 import Profile from "@/assets/Img/image.png";
+import CardProjects from "@/shared/components/CardProjects";
 
 const TopProjects = () => {
   const dataCard = [
@@ -14,11 +14,10 @@ const TopProjects = () => {
       title: "دوره‌های پرفروش",
       descreption: "توضیح مختصر دوره",
       profile: Profile,
-      NameTeacher: "استاد برتر",
-      TitleCourses: "موضوع دوره",
+      TitleProjects: "موضوع دوره",
       score: 4.8,
       price: 200000,
-      people: "150",
+      time: "14",
     },
     {
       id: 2,
@@ -27,10 +26,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره جدید",
       profile: Profile,
       NameTeacher: "استاد دیگر",
-      TitleCourses: "موضوع جدید",
+      TitleProjects: "موضوع جدید",
       score: 4.7,
       price: 300000,
-      people: "250",
+      time: "14",
     },
     {
       id: 3,
@@ -39,10 +38,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره توسعه فردی",
       profile: Profile,
       NameTeacher: "استاد سوم",
-      TitleCourses: "موضوع توسعه فردی",
+      TitleProjects: "موضوع توسعه فردی",
       score: 4.9,
       price: 400000,
-      people: "100",
+      time: "14",
     },
     {
       id: 4,
@@ -51,10 +50,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره React",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
-      TitleCourses: "دوره تخصصی React",
+      TitleProjects: "دوره تخصصی React",
       score: 5.0,
       price: 500000,
-      people: "300",
+      time: "14",
     },
     {
       id: 5,
@@ -63,10 +62,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره React",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
-      TitleCourses: "دوره تخصصی React",
+      TitleProjects: "دوره تخصصی React",
       score: 5.0,
       price: 500000,
-      people: "300",
+      time: "14",
     },
     {
       id: 6,
@@ -75,10 +74,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره React",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
-      TitleCourses: "دوره تخصصی React",
+      TitleProjects: "دوره تخصصی React",
       score: 5.0,
       price: 500000,
-      people: "300",
+      time: "14",
     },
     {
       id: 7,
@@ -87,10 +86,10 @@ const TopProjects = () => {
       descreption: "توضیح مختصر دوره React",
       profile: Profile,
       NameTeacher: "استاد متخصص React",
-      TitleCourses: "دوره تخصصی React",
+      TitleProjects: "دوره تخصصی React",
       score: 5.0,
       price: 500000,
-      people: "300",
+      time: "14",
     },
   ];
 
@@ -98,7 +97,7 @@ const TopProjects = () => {
     <section className="gap-10 px-5 pt-32 lg:px-20 md:px-10">
       {/* Header */}
       <TittleSection
-        title="پروژه‌های فوری"
+        title="پروژه‌های برتر"
         color="bg-yellow-600"
         titleCourse=""
         mode={false}
@@ -136,17 +135,13 @@ const TopProjects = () => {
       >
         {dataCard.map((item) => (
           <SwiperSlide key={item.id}>
-            <Card
-              dataCard={{
-                img: item.Img,
-                title: item.title,
+            <CardProjects
+              dataCardProject={{
                 descreption: item.descreption,
-                profile: item.profile,
-                NameTeacher: item.NameTeacher,
-                TitleCourses: item.TitleCourses,
                 score: item.score,
                 price: item.price,
-                people: item.people,
+                timeProject: item.time,
+                TitleProject: item.TitleProjects,
               }}
             />
           </SwiperSlide>
