@@ -2,6 +2,7 @@ import ImgDeveloper from "@/assets/Img/Video game developer-pana.png";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { MoveLeft } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -30,6 +31,7 @@ const HeroSection = () => {
             <div>
               <Button className="p-6 bg-blue-500" rounded={"full"}>
                 از این مسیر ها شروع کن{" "}
+                <MoveLeft size={25} className=" relative top-0.5 mr-2" />
               </Button>
             </div>
             <div className="flex items-center justify-center gap-4 mt-10 font-medium lg:mt-0 md:mt-0">
@@ -37,7 +39,7 @@ const HeroSection = () => {
               <Link to={""}>
                 <Button
                   icon={Play}
-                  className="p-6 bg-pink-800 border-none"
+                  className="p-6 bg-pink-800 border-none text-white"
                   rounded={"full"}
                   size={"icon"}
                 />

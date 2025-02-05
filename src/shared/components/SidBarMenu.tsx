@@ -13,7 +13,7 @@ import { Menu } from "lucide-react";
 export const SidBarMenu = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger>
         <Button variant="outline" className="border-none shadow-none">
           <Menu />
         </Button>
@@ -27,15 +27,15 @@ export const SidBarMenu = () => {
           </SheetTitle>
           <hr className="border border-zinc-700 " />
         </SheetHeader>
-        <div className="mt-5 ">
+        <div className="my-5 ">
           <Input
             icon={Search}
+            iconPosition="left"
             rounded="md"
-            className="w-[228px] h-[49px]"
+            className="w-[228px] h-[40px] placeholder:text-xs"
             placeholder="دنبال چی میگردی؟"
           />
         </div>
-
         <MenuItems />
       </SheetContent>
     </Sheet>
