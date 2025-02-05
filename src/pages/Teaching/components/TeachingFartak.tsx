@@ -1,6 +1,7 @@
 import img from "@/assets/Img/image 19.png";
-import { Button } from "@/components/ui/button";
-
+import "@/shared/CoustomStyle/imdex.css";
+import { Link } from "react-router-dom";
+import { MoveLeft } from "lucide-react";
 const TeachingFartak = () => {
   return (
     <section className="py-32 px-11 container">
@@ -16,15 +17,18 @@ const TeachingFartak = () => {
           <h1 className="text-black dark:text-white text-3xl font-extrabold mb-4">
             تدریس در فرتاک
           </h1>
-          <p className="text-xl text-black dark:text-white font-medium mb-6 leading-10">
+          <p className="text-lg text-black dark:text-white font-medium mb-6 leading-10">
             برای همکاری آموزشی، تدریس و ارایه آموزش در فرتاک و پیوستن به{" "}
             <span className="block">
               آن به عنوان عضو هیات علمی، به لینک زیر مراجعه کنید.
             </span>
           </p>
-          <Button className="px-6 py-3 mt-10 w-1/3 border-none rounded-md">
-            تدریس
-          </Button>
+          <Link to={"/"}>
+            <button className="bn30 flex items-center gap-2 ">
+              شروع تدریس
+              <MoveLeft size={22} className=" relative top-0.5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

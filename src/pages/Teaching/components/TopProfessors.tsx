@@ -56,13 +56,13 @@ const TopProfessors = () => {
         <div className="text-center text-4xl font-bold">
           <h1>اساتید برتر فرتاک</h1>
         </div>
-        <ul className="flex justify-center gap-7 mt-5">
+        <ul className="flex justify-center gap-7 my-16">
           {categories.map((category) => (
             <li
               key={category}
               className={`cursor-pointer pb-2 ${
                 selectedCategory === category
-                  ? "border-b-[5px] border-[#2B4DE3] dark:border-white font-semibold"
+                  ? "border-b-[2px] border-[#2B4DE3] dark:border-white font-semibold"
                   : "text-gray-600 dark:text-gray-400"
               }`}
               onClick={() => setSelectedCategory(category)}
