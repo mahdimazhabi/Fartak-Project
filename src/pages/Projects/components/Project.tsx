@@ -52,16 +52,22 @@ const Project = () => {
                     زمان پیشنهادی {items.ownerId} روز
                   </span>
                 </div>
-                <div className="flex items-center">
-                  <Toggle asChild>
-                    <span className="bg-white/20 p-3 rounded-md cursor-pointer">
-                      <Bookmark size={10} className="text-black" />
+                <div className="flex items-center gap-5">
+                  <div className="bg-white/70 rounded-md cursor-pointer px-2 py-1">
+                    <Toggle variant={"default"} asChild>
+                      <Bookmark
+                        className="text-black data-[state=on]:fill-red-500"
+                        size={15}
+                      />
+                    </Toggle>
+                  </div>
+
+                  <div>
+                    <span className="flex items-center gap-2 text-black text-xs ml-3">
+                      امتیاز کارفرما
+                      <Star className="w-3 h-3 text-yellow-500 fill-current" />
                     </span>
-                  </Toggle>
-                  <span className="text-black text-xs ml-3">
-                    امتیاز کارفرما
-                  </span>
-                  <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                  </div>
                 </div>
                 <div>
                   <p className="text-black text-xs mt-3 max-w-[900px] break-words line-clamp-2 leading-5">
