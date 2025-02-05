@@ -3,7 +3,6 @@ import { PropsWithChildren, useEffect } from "react";
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
   const { isDarkMode } = useDarkMode();
-  console.log(isDarkMode);
 
   useEffect(() => {
     const root = document.documentElement;

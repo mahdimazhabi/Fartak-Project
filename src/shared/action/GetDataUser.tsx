@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useUniqueUserDataStore } from "../store/UniqueUserDataStore";
+import { useQuery } from "@tanstack/react-query";
 
 const useDataUserById = () => {
   const userId = localStorage.getItem("userId");
-  const { setDataUser } = useUniqueUserDataStore();
 
-  const getuserbyId = async () => {
-    try {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["datauser", userId],
+    queryFn: async () => {
       const response = await axios.post(
         `https://www.backendtestali.ir/api/Users/GetById`,
         { userId },
@@ -16,19 +16,12 @@ const useDataUserById = () => {
           },
         }
       );
-      if (
-        response.status === 200 &&
-        response.data.users &&
-        response.data.users.length > 0
-      ) {
-        setDataUser(response.data.users[0]);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      return response.data;
+    },
+    enabled: !!userId,
+  });
 
-  return { getuserbyId };
+  return { data, isLoading, error };
 };
 
 export default useDataUserById;
