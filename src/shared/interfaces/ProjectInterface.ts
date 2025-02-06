@@ -7,3 +7,10 @@ export interface getList {
   price: number;
   image: string;
 }
+
+export interface addProjects {
+  Title: string;
+  Description: string;
+  OwnerId: string;
+  Price: string;
+}

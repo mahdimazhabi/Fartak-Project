@@ -8,6 +8,7 @@ import HomeLayout from "@/shared/layouts/HomeLayout/HomeLayout";
 import CoursesLayout from "@/shared/layouts/CourseLayout/CoursesLayout";
 import BlogLayout from "@/shared/layouts/BlogLayout/BlogLayout";
 import ProjectsLayout from "@/shared/layouts/projectsLayout/ProjectsLayout";
+import ProjectRegistration from "@/pages/Projects/components/ProjectRegistration";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -43,8 +44,8 @@ export const AllRouters: RouteObject[] = [
       {
         path: "/projects",
         element: <ProjectsLayout />,
-        children: [{ path: "registration", element: "" }],
       },
+      { path: "projects/registration", element: <ProjectRegistration /> },
       {
         path: "/teaching",
         element: <TeachingLayout />,
