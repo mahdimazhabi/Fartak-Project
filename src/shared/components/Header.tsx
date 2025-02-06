@@ -60,7 +60,7 @@ const Header: React.FC = () => {
 
         <div className="flex items-center gap-4 lg:gap-4">
           {kind == 3 && (
-            <Link to={"/"}>
+            <Link to={"projects/registration"}>
               <button className="bn53 rounded text-white">
                 ثبت پروژه رایگان
               </button>

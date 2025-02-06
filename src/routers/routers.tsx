@@ -43,6 +43,7 @@ export const AllRouters: RouteObject[] = [
       {
         path: "/projects",
         element: <ProjectsLayout />,
+        children: [{ path: "registration", element: "" }],
       },
       {
         path: "/teaching",

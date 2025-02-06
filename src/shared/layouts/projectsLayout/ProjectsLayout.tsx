@@ -1,6 +1,7 @@
 import CoursesHeader from "@/pages/Courses/components/CoursesHeader";
 import SlidersPage from "@/shared/components/SlidersPage";
 import Project from "@/pages/Projects/components/Project";
+import { Outlet } from "react-router-dom";
 const ProjectsLayout = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const ProjectsLayout = () => {
       />
       <Project />
       <SlidersPage />
+      <Outlet />
     </>
   );
 };
