@@ -42,6 +42,7 @@ export const useAuthenticationApi = () => {
       if (response.data.isSuccess) {
         localStorage.setItem("token", response.data.token.token);
         localStorage.setItem("userId", response.data.user.userId);
+       
         toast.success("ثبت نام با موفقیت انجام شد");
         setTimeout(() => {
           navigate("/", { replace: true });
@@ -74,6 +75,7 @@ export const useAuthenticationApi = () => {
         }, 3000);
         localStorage.setItem("token", response.data.token.token);
         localStorage.setItem("userId", response.data.user.userId);
+       
       } else toast.error(response.data.message);
     } catch (error: any) {
       toast.error("خطا در ثبت نام");

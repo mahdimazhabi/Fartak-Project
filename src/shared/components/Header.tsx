@@ -12,6 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Typography } from "@/shared/common/Typography";
 import MainAvatar from "@/shared/common/MainAvatar";
 import useisPersian from "@/shared/hook/useispersian";
+import "../CoustomStyle/imdex.css";
 
 const Header: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
@@ -20,6 +21,7 @@ const Header: React.FC = () => {
   const [scrollY, setscrollY] = useState(0);
   const token = localStorage.getItem("token");
   const { data } = useDataUserById();
+  const kind = data?.users[0]?.kind;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +59,14 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4 lg:gap-4">
+          {kind == 3 && (
+            <Link to={"/"}>
+              <button className="bn53 rounded text-white">
+                ثبت پروژه رایگان
+              </button>
+            </Link>
+          )}
+
           <div className="hidden lg:block">
             <Input
               icon={Search}
