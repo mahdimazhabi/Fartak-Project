@@ -101,9 +101,8 @@
 
 .bn53 {
   background-color: #f79533;
-  padding: 8px;
+  padding: 11px;
   width: 100%;
-
   animation: bn53bounce 4s infinite;
   cursor: pointer;
 }

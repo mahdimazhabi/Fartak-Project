@@ -9,6 +9,8 @@ import CoursesLayout from "@/shared/layouts/CourseLayout/CoursesLayout";
 import BlogLayout from "@/shared/layouts/BlogLayout/BlogLayout";
 import ProjectsLayout from "@/shared/layouts/projectsLayout/ProjectsLayout";
 import ProjectRegistration from "@/pages/Projects/components/ProjectRegistration";
+import RequiredKind from "@/shared/required/RequiredKind";
+
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -45,7 +47,14 @@ export const AllRouters: RouteObject[] = [
         path: "/projects",
         element: <ProjectsLayout />,
       },
-      { path: "projects/registration", element: <ProjectRegistration /> },
+      {
+        path: "projects/registration",
+        element: (
+          <RequiredKind>
+            <ProjectRegistration />
+          </RequiredKind>
+        ),
+      },
       {
         path: "/teaching",
         element: <TeachingLayout />,

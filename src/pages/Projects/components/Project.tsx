@@ -6,12 +6,15 @@ import { getList } from "@/shared/interfaces/ProjectInterface";
 import Loading from "@/shared/common/Loading";
 
 const Project = () => {
-  const { data, isLoading } = useProjectApi();
+  const { listProjectsData, listProjectsLoading } = useProjectApi();
+  const reversedData = listProjectsData?.projects
+    ? [...listProjectsData.projects].reverse()
+    : [];
 
   return (
     <section>
-      {isLoading && <Loading />}
-      <div className="lg:flex space-y-3 lg:space-y-0 md:flex md:space-y-0 justify-between gap-3 items-start mt-20 px-4">
+      {listProjectsLoading && <Loading />}
+      <div className="lg:flex  space-y-3 lg:space-y-0 md:flex md:space-y-0 justify-around gap-3 items-start mt-20 px-4">
         <div className="p-10 bg-slate-200 rounded h-auto">
           <h1 className="text-black border-b-2 pb-4 text-center">
             پیشنهاد های باقی مانده
@@ -33,59 +36,61 @@ const Project = () => {
             <span className="text-white text-xs">افزایش پیشنهاد ها</span>
           </div>
         </div>
-        {data?.projects?.map((items: getList) => (
-          <div
-            key={items.projectId}
-            className="lg:flex justify-between w-full hover:shadow-md bg-slate-200   hover:shadow-blue-200 transition-shadow rounded h-auto"
-          >
-            <div>
-              <div className="p-9">
-                <h1 className="font-semibold text-[#E4911F] mb-4 hover:text-black cursor-pointer">
-                  {items.title}
-                </h1>
-                <div className="flex items-center mb-4">
-                  <span className="text-xs text-black border-l-2 px-2">
-                    بودجه {items.price} تومان
-                  </span>
-                  <span className="text-xs text-black mr-2">
-                    {" "}
-                    زمان پیشنهادی {items.ownerId} روز
-                  </span>
-                </div>
-                <div className="flex items-center gap-5">
-                  <div className="bg-white/70 rounded-md cursor-pointer px-2 py-1">
-                    <Toggle variant={"default"} asChild>
-                      <Bookmark
-                        className="text-black data-[state=on]:fill-red-500"
-                        size={15}
-                      />
-                    </Toggle>
-                  </div>
-
-                  <div>
-                    <span className="flex items-center gap-2 text-black text-xs ml-3">
-                      امتیاز کارفرما
-                      <Star className="w-3 h-3 text-yellow-500 fill-current" />
+        <div className="flex flex-col gap-5">
+          {reversedData.map((items: getList) => (
+            <div
+              key={items.projectId}
+              className="lg:flex  justify-between w-full hover:shadow-md bg-slate-200   hover:shadow-blue-200 transition-shadow rounded h-auto"
+            >
+              <div>
+                <div className="p-9">
+                  <h1 className="font-semibold text-[#E4911F] mb-4 hover:text-black text-lg cursor-pointer">
+                    {items.title}
+                  </h1>
+                  <div className="flex items-center mb-4">
+                    <span className="text-xs text-black border-l-2 px-2">
+                      بودجه {items.price} تومان
+                    </span>
+                    <span className="text-xs text-black mr-2">
+                      {" "}
+                      زمان پیشنهادی {items.ownerId} روز
                     </span>
                   </div>
-                </div>
-                <div>
-                  <p className="text-black text-xs mt-3 max-w-[900px] break-words line-clamp-2 leading-5">
-                    {items.description}
-                  </p>
+                  <div className="flex items-center gap-5">
+                    <div className="bg-white/70 rounded-md cursor-pointer px-2 py-1">
+                      <Toggle variant={"default"} asChild>
+                        <Bookmark
+                          className="text-black data-[state=on]:fill-red-500"
+                          size={15}
+                        />
+                      </Toggle>
+                    </div>
+
+                    <div>
+                      <span className="flex items-center gap-2 text-black text-xs ml-3">
+                        امتیاز کارفرما
+                        <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-black text-sm mt-5 max-w-[900px] line-clamp-1">
+                      {items.description}
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div className="flex flex-col gap-y-2.5 p-5">
+                <Button className="border-[#2DD6B8] bg-[#2dd6b73b] hover:border-[#2DD6B8] hover:bg-[#2DD6B8] text-[#2DD6B8]  font-bold hover:text-white transition-colors text-xs">
+                  مشاهده پروژه
+                </Button>
+                <Button className="border-[#4160F5] hover:bg-[#415ff5] bg-[#415ff52d] hover:border-[#4160F5] text-[#4160F5] font-bold text-xs hover:text-white transition-colors">
+                  ثبت پیشنهاد پروژه
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-col gap-y-2.5 p-5">
-              <Button className="border-[#2DD6B8] bg-[#2dd6b73b] hover:border-[#2DD6B8] hover:bg-[#2DD6B8] text-[#2DD6B8]  font-bold hover:text-white transition-colors text-xs">
-                مشاهده پروژه
-              </Button>
-              <Button className="border-[#4160F5] hover:bg-[#415ff5] bg-[#415ff52d] hover:border-[#4160F5] text-[#4160F5] font-bold text-xs hover:text-white transition-colors">
-                ثبت پیشنهاد پروژه
-              </Button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

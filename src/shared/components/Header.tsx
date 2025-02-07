@@ -61,7 +61,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-4 lg:gap-4">
           {kind == 3 && (
             <Link to={"projects/registration"}>
-              <button className="bn53 rounded text-white">
+              <button className="bn53 rounded text-white  text-xs">
                 ثبت پروژه رایگان
               </button>
             </Link>

@@ -7,7 +7,7 @@ import { getList } from "@/shared/interfaces/ProjectInterface";
 import CardProjects from "@/shared/components/CardProjects";
 
 const UrgentProjects = () => {
-  const { data } = useProjectApi();
+  const { listProjectsData } = useProjectApi();
 
   return (
     <section className="gap-10 px-5 pt-48 lg:px-20 md:px-10">
@@ -20,7 +20,7 @@ const UrgentProjects = () => {
       />
 
       {/* Swiper */}
-      {data?.projects && data.projects.length > 0 ? (
+      {listProjectsData?.projects && listProjectsData.projects.length > 0 ? (
         <Swiper
           spaceBetween={10}
           slidesPerView={4}
@@ -50,7 +50,7 @@ const UrgentProjects = () => {
             },
           }}
         >
-          {data.projects.map((item: getList) => (
+          {listProjectsData.projects.map((item: getList) => (
             <SwiperSlide key={item.projectId}>
               <CardProjects
                 dataCardProject={{

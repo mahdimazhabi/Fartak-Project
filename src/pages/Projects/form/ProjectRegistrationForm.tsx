@@ -6,9 +6,12 @@ import * as yup from "yup";
 import ProjectRegistrationSchema from "@/shared/schema/ProjectRegistrationSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "sonner";
+import useProjectApi from "@/api/Project/ProjectApi";
+import { addProjects } from "@/shared/interfaces/ProjectInterface";
 
 const ProjectRegistrationForm = () => {
   const [waiting, setWaiting] = useState(false);
+  const { add } = useProjectApi();
   type IFormInput = yup.InferType<typeof ProjectRegistrationSchema>;
 
   const {
@@ -20,12 +23,21 @@ const ProjectRegistrationForm = () => {
     resolver: yupResolver(ProjectRegistrationSchema),
   });
 
-  const onsubmit: SubmitHandler<IFormInput> = async () => {
+  const onsubmit: SubmitHandler<IFormInput> = async (data: addProjects) => {
+    console.log(data);
+
     try {
       setWaiting(true);
+      const formData = new FormData();
+
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, String(value));
+      });
+      await add(formData);
     } catch {
-      toast.error("");
+      toast.error("خطا در ارسال داده‌ها");
     } finally {
+      setWaiting(false);
       reset();
     }
   };
@@ -40,10 +52,11 @@ const ProjectRegistrationForm = () => {
           <Input
             id="Title"
             placeholder="عنوان پروژه خود را وارد کنید"
-            {...register("Title")}
-            error={errors.Title}
+            {...register("title")}
+            error={errors.title}
             className="border-none w-full sm:w-[500px] md:w-[600px] mt-3 bg-[#EFF0F2]"
             rounded={"md"}
+            type="text"
           />
         </div>
 
@@ -54,13 +67,13 @@ const ProjectRegistrationForm = () => {
           <textarea
             id="Description"
             placeholder="کمی بیشتر در مورد پروژه بنویسید و خروجی کار مورد نظر خود را شرح دهید"
-            {...register("Description")}
-            className="border-none w-full mt-3 bg-[#EFF0F2] p-3 rounded-md  resize-none"
+            {...register("description")}
+            className="border-none w-full mt-3 bg-[#EFF0F2] p-3 rounded-md  resize-none  focus:border-none text-black outline-none"
             rows={7}
           />
-          {errors.Price && (
+          {errors.description && (
             <span className="text-red-500 text-sm mt-2">
-              {errors.Description?.message}
+              {errors.description?.message}
             </span>
           )}
         </div>
@@ -72,10 +85,11 @@ const ProjectRegistrationForm = () => {
           <Input
             id="Price"
             placeholder="مبلغ مورد نظر خود را وارد کنید"
-            {...register("Price")}
-            error={errors.Price}
+            {...register("price")}
+            error={errors.price}
             className="border-none w-full mt-3 bg-[#EFF0F2]"
             rounded={"md"}
+            type="text"
           />
           {}
         </div>
@@ -87,10 +101,11 @@ const ProjectRegistrationForm = () => {
           <Input
             id="OwnerId"
             placeholder="تعداد روز"
-            {...register("OwnerId")}
-            error={errors.OwnerId}
+            {...register("ownerId")}
+            error={errors.ownerId}
             className="border-none w-full mt-3 bg-[#EFF0F2]"
             rounded={"md"}
+            type="text"
           />
         </div>
 

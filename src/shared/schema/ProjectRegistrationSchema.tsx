@@ -1,12 +1,13 @@
 import * as yup from "yup";
 
 const ProjectRegistrationSchema = yup.object().shape({
-  Title: yup.string().required("عنوان پروژه الزامی است"),
-  Description: yup
+  title: yup.string().required("عنوان پروژه الزامی است"),
+  description: yup
     .string()
-    .required("وضیحات پروژه باید حداقل 30 کاراکتر باشد."),
-  Price: yup.string().required("مبلغ پروژه الزامی است"),
-  OwnerId: yup.string().required("لطفا زمان پروژه مشخص کنید"),
+    .min(30, "نوضیحات پروژه باید حداقل 30 کاراکتر باشد")
+    .required("نوضیحات پروژه الزامی است"),
+  price: yup.string().required("مبلغ پروژه الزامی است"),
+  ownerId: yup.string().required("لطفا زمان پروژه مشخص کنید"),
 });
 
 export default ProjectRegistrationSchema;

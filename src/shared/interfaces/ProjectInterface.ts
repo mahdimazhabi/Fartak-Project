@@ -9,8 +9,9 @@ export interface getList {
 }
 
 export interface addProjects {
-  Title: string;
-  Description: string;
-  OwnerId: string;
-  Price: string;
+  title: string;
+  description: string; // اصلاح نوشتاری
+  ownerId: string;
+  price: string;
+  [key: string]: string; // برای ویژگی‌های داینامیک
 }
