@@ -24,8 +24,6 @@ const ProjectRegistrationForm = () => {
   });
 
   const onsubmit: SubmitHandler<IFormInput> = async (data: addProjects) => {
-    console.log(data);
-
     try {
       setWaiting(true);
       const formData = new FormData();
@@ -54,7 +52,7 @@ const ProjectRegistrationForm = () => {
             placeholder="عنوان پروژه خود را وارد کنید"
             {...register("title")}
             error={errors.title}
-            className="border-none w-full sm:w-[500px] md:w-[600px] mt-3 bg-[#EFF0F2]"
+            className="border-none w-full sm:w-[500px] md:w-[600px] mt-3 bg-[#EFF0F2] placeholder:text-sm"
             rounded={"md"}
             type="text"
           />
@@ -66,9 +64,9 @@ const ProjectRegistrationForm = () => {
           </label>
           <textarea
             id="Description"
-            placeholder="کمی بیشتر در مورد پروژه بنویسید و خروجی کار مورد نظر خود را شرح دهید"
+            placeholder="کمی بیشتر در مورد پروژه بنویسید "
             {...register("description")}
-            className="border-none w-full mt-3 bg-[#EFF0F2] p-3 rounded-md  resize-none  focus:border-none text-black outline-none"
+            className="border-none w-full mt-3 bg-[#EFF0F2] p-3 rounded-md  resize-none  focus:border-none text-black outline-none placeholder:text-sm placeholder:text-gray-600"
             rows={7}
           />
           {errors.description && (
@@ -87,7 +85,7 @@ const ProjectRegistrationForm = () => {
             placeholder="مبلغ مورد نظر خود را وارد کنید"
             {...register("price")}
             error={errors.price}
-            className="border-none w-full mt-3 bg-[#EFF0F2]"
+            className="border-none w-full mt-3 bg-[#EFF0F2] placeholder:text-sm"
             rounded={"md"}
             type="text"
           />
@@ -103,7 +101,7 @@ const ProjectRegistrationForm = () => {
             placeholder="تعداد روز"
             {...register("ownerId")}
             error={errors.ownerId}
-            className="border-none w-full mt-3 bg-[#EFF0F2]"
+            className="border-none w-full mt-3 bg-[#EFF0F2] placeholder:text-sm"
             rounded={"md"}
             type="text"
           />
