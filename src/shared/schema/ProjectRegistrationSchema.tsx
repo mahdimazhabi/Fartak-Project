@@ -7,7 +7,7 @@ const ProjectRegistrationSchema = yup.object().shape({
     .min(30, "نوضیحات پروژه باید حداقل 30 کاراکتر باشد")
     .required("نوضیحات پروژه الزامی است"),
   price: yup.string().required("مبلغ پروژه الزامی است"),
-  ownerId: yup.string().required("لطفا زمان پروژه مشخص کنید"),
+  duration: yup.string().required("لطفا زمان پروژه مشخص کنید"),
 });
 
 export default ProjectRegistrationSchema;

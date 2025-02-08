@@ -6,12 +6,13 @@ export interface getList {
   ownerId: number;
   price: number;
   image: string;
+  duration: number;
 }
 
 export interface addProjects {
   title: string;
-  description: string; // اصلاح نوشتاری
-  ownerId: string;
+  description: string;
+  duration: string;
   price: string;
-  [key: string]: string; // برای ویژگی‌های داینامیک
+  [key: string]: string;
 }

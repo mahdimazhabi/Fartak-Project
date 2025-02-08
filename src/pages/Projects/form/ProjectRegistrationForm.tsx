@@ -26,11 +26,15 @@ const ProjectRegistrationForm = () => {
   const onsubmit: SubmitHandler<IFormInput> = async (data: addProjects) => {
     try {
       setWaiting(true);
-      const formData = new FormData();
 
+      const durationInMinutes = parseInt(data.duration || "0") * 1440;
+
+      const formData = new FormData();
       Object.entries(data).forEach(([key, value]) => {
         formData.append(key, String(value));
       });
+      formData.set("duration", String(durationInMinutes));
+
       await add(formData);
     } catch {
       toast.error("خطا در ارسال داده‌ها");
@@ -89,7 +93,6 @@ const ProjectRegistrationForm = () => {
             rounded={"md"}
             type="text"
           />
-          {}
         </div>
 
         <div className="mx-auto w-full sm:w-[500px] md:w-[600px]">
@@ -99,8 +102,8 @@ const ProjectRegistrationForm = () => {
           <Input
             id="OwnerId"
             placeholder="تعداد روز"
-            {...register("ownerId")}
-            error={errors.ownerId}
+            {...register("duration")}
+            error={errors.duration}
             className="border-none w-full mt-3 bg-[#EFF0F2] placeholder:text-sm"
             rounded={"md"}
             type="text"

@@ -53,7 +53,7 @@ const Project = () => {
                         بودجه {items.price} تومان
                       </span>
                       <span className="text-xs text-black mr-2">
-                        زمان پیشنهادی {items.ownerId} روز
+                        زمان پیشنهادی {items.duration / 1440} روز
                       </span>
                     </div>
                     <div className="flex items-center gap-5">
