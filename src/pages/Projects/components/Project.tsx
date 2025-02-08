@@ -52,8 +52,13 @@ const Project = () => {
                       <span className="text-xs text-black border-l-2 px-2">
                         بودجه {items.price} تومان
                       </span>
-                      <span className="text-xs text-black mr-2">
-                        زمان پیشنهادی {items.duration / 1440} روز
+                      <span className="text-xs text-black mr-4">
+                        زمان پیشنهادی
+                        <span className="mx-2">
+                          {items.duration / 1440 > 1
+                            ? `${(items.duration / 1440).toFixed(0)} روز`
+                            : "1 روز"}
+                        </span>
                       </span>
                     </div>
                     <div className="flex items-center gap-5">
