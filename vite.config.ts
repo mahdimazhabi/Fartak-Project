@@ -1,17 +1,13 @@
-import { defineConfig } from "vite";
+import path from "path";
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // مسیر درست برای alias
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "./", // مسیرهای نسبی برای دیپلوی در Plesk
 });
