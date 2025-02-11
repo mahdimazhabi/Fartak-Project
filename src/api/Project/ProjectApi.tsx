@@ -24,7 +24,7 @@ const useProjectApi = () => {
       );
       return response.data;
     },
-    staleTime: 500,
+    staleTime: 5000,
     retry: 3,
   });
 
