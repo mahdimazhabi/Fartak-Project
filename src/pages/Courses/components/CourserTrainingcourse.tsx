@@ -10,7 +10,7 @@ const CourserTrainingcourse = () => {
   return (
     <div className="px-6" dir="rtl">
       {isLoading && <Loading />}
-      {data.courses.length > 0 ? (
+      {data?.courses.length > 0 ? (
         data?.courses.map((items: getAlllist) => (
           <div key={items.courseId} className="my-8 h-full">
             <div className="flex flex-col lg:flex-row items-center lg:items-end gap-6 justify-between bg-[#E7E7E74D] dark:bg-white/5 rounded-3xl p-4">
