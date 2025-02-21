@@ -11,7 +11,7 @@ export const useAuthenticationApi = () => {
   const getDataUser = async () => {
     try {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Users/GetAll",
+        "https://backend.fartakproject.ir/api/Users/GetAll",
         {},
         {
           headers: {
@@ -29,7 +29,7 @@ export const useAuthenticationApi = () => {
   const add = async (data: RegisterUser) => {
     try {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Users/Add",
+        "https://backend.fartakproject.ir/api/Users/Add",
         data,
         {
           headers: {
@@ -42,7 +42,7 @@ export const useAuthenticationApi = () => {
       if (response.data.isSuccess) {
         localStorage.setItem("token", response.data.token.token);
         localStorage.setItem("userId", response.data.user.userId);
-       
+
         toast.success("ثبت نام با موفقیت انجام شد");
         setTimeout(() => {
           navigate("/", { replace: true });
@@ -59,7 +59,7 @@ export const useAuthenticationApi = () => {
   const Login = async (data: LoginUser) => {
     try {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Users/GetByMobilePassword",
+        "https://backend.fartakproject.ir/api/Users/GetByMobilePassword",
         data,
         {
           headers: {
@@ -75,7 +75,6 @@ export const useAuthenticationApi = () => {
         }, 3000);
         localStorage.setItem("token", response.data.token.token);
         localStorage.setItem("userId", response.data.user.userId);
-       
       } else toast.error(response.data.message);
     } catch (error: any) {
       toast.error("خطا در ثبت نام");

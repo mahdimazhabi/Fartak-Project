@@ -14,7 +14,7 @@ const useProjectApi = () => {
     queryKey: ["listProjects"],
     queryFn: async function () {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Projects/GetAll",
+        "https://backend.fartakproject.ir/api/Projects/GetAll",
         {},
         {
           headers: {
@@ -31,7 +31,7 @@ const useProjectApi = () => {
   const add = async (data: any) => {
     try {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Projects/Add",
+        "https://backend.fartakproject.ir/api/Projects/Add",
         data
       );
       if (response) {

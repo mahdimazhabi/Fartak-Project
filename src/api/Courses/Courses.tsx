@@ -5,7 +5,7 @@ export const useCoursesApi = () => {
     queryKey: ["getAllCourses"],
     queryFn: async () => {
       const response = await axios.post(
-        "https://www.backendtestali.ir/api/Courses/GetAll",
+        "https://backend.fartakproject.ir/Courses/GetAll",
         {},
         {
           headers: {
