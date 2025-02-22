@@ -17,16 +17,16 @@ const TeachingFartak = () => {
           <h1 className="text-black dark:text-white text-3xl font-extrabold mb-4">
             تدریس در فرتاک
           </h1>
-          <p className="text-lg text-black dark:text-white font-medium mb-6 leading-10">
+          <p className="lg:text-lg  text-black dark:text-white font-medium mb-6 leading-10">
             برای همکاری آموزشی، تدریس و ارایه آموزش در فرتاک و پیوستن به{" "}
             <span className="block">
               آن به عنوان عضو هیات علمی، به لینک زیر مراجعه کنید.
             </span>
           </p>
           <Link to={"/"}>
-            <button className="bn30 flex items-center gap-2   ">
+            <button className="bn30 flex  items-center gap-2 mx-auto lg:mx-0   ">
               شروع تدریس
-              <MoveLeft size={22} className=" relative top-0.5" />
+              <MoveLeft size={22} className=" relative top-[1px]" />
             </button>
           </Link>
         </div>

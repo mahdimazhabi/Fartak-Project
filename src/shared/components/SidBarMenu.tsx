@@ -10,6 +10,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "@/assets/logo/IMG_20250204_105629_308.jpg";
 export const SidBarMenu = () => {
   return (
     <Sheet>
@@ -19,11 +21,15 @@ export const SidBarMenu = () => {
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
+        <SheetHeader className="py-2">
           <SheetTitle>
-            <Button className="flex w-1/2 mb-5 top-2 bg-inherit hover:bg-inherit">
-              Logo
-            </Button>
+            <Link to="/">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-9 h-9  ml-10 text-blue-500 lg:block bg-inherit rounded-full"
+              />
+            </Link>
           </SheetTitle>
           <hr className="border border-zinc-700 " />
         </SheetHeader>
