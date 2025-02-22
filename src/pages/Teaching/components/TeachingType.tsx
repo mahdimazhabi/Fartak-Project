@@ -1,8 +1,9 @@
 import teacherImg from "@/assets/Img/teaching-removebg-preview.png";
 import { Button } from "@/components/ui/button";
-import { GoHome } from "react-icons/go";
+
 import { FaChalkboardTeacher } from "react-icons/fa";
 import "@/shared/CoustomStyle/imdex.css";
+import { House } from "lucide-react";
 
 const TeachingType = () => {
   return (
@@ -25,14 +26,14 @@ const TeachingType = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-20">
+        <div className="flex flex-col md:flex-row dark:bg-gray-700 px-20 shadow-xl bg-slate-300  rounded-lg py-8 justify-center items-center gap-10 mt-20">
           <Button className="flex items-center gap-2 px-14 py-8 bg-gradient-to-r from-blue-500  border-none to-blue-700 text-white rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition-colors duration-500">
             تدریس خصوصی آنلاین
             <FaChalkboardTeacher size={22} className="mr-2" />
           </Button>
           <Button className="flex items-center gap-2 px-14 py-8 bg-gradient-to-r from-green-500  border-none to-green-700 text-white rounded-lg shadow-lg hover:from-green-600 hover:to-green-800 transition-colors duration-500">
             تدریس حضوری در منزل
-            <GoHome size={22} className="mr-2" />
+            <House size={22} className="mr-2" />
           </Button>
         </div>
       </div>
