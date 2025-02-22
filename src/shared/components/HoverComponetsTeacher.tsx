@@ -15,7 +15,7 @@ import {
 
 const HoverComponetsTeacher = () => {
   return (
-    <section className="p-11 w-full  absolute  top-[7rem]">
+    <section className="p-11 w-full  absolute top-[7rem] z-50">
       <div className="bg-[#FFFFFF] dark:bg-slate-800 p-4   rounded-lg z-50">
         <ul className="flex flex-col items-start space-y-4 w-full border-l-4 max-w-fit  ">
           <li className="flex text-xs items-center cursor-pointer text-black dark:text-white font-medium   dark:hover:bg-white/20 rounded hover:bg-black/20 transition-colors  px-3 ">
