@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo/IMG_20250204_105629_308.jpg";
+import logo from "@/assets/logo/logo.png";
 export const SidBarMenu = () => {
   return (
     <Sheet>

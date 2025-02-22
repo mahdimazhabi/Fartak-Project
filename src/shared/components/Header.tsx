@@ -13,7 +13,7 @@ import { Typography } from "@/shared/common/Typography";
 import MainAvatar from "@/shared/common/MainAvatar";
 import useisPersian from "@/shared/hook/useispersian";
 import "../CoustomStyle/imdex.css";
-import logo from "@/assets/logo/IMG_20250204_105629_308.jpg";
+import logo from "@/assets/logo/logo.png";
 
 const Header: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
