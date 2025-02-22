@@ -13,6 +13,7 @@ import { Typography } from "@/shared/common/Typography";
 import MainAvatar from "@/shared/common/MainAvatar";
 import useisPersian from "@/shared/hook/useispersian";
 import "../CoustomStyle/imdex.css";
+import logo from "@/assets/logo/IMG_20250204_105629_308.jpg";
 
 const Header: React.FC = () => {
   const { toggle, isDarkMode } = useDarkMode();
@@ -44,15 +45,13 @@ const Header: React.FC = () => {
         {(isMobile || isTablet) && <SidBarMenu />}
 
         <div className="flex items-center">
-          {/* Logo */}
-          <Button
-            className="hidden ml-10 text-blue-500 lg:block bg-inherit"
-            rounded="none"
-            shadow="none"
-            size="default"
-          >
-            Logo
-          </Button>
+          <Link to="/">
+            <img
+              src={logo}
+              alt="logo"
+              className="w-12 h-12 hidden ml-10 text-blue-500 lg:block bg-inherit rounded-full"
+            />
+          </Link>
           <div className="hidden lg:block">
             <MenuItems />
           </div>
