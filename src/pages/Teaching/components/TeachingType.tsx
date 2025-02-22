@@ -6,7 +6,7 @@ import "@/shared/CoustomStyle/imdex.css";
 
 const TeachingType = () => {
   return (
-    <section className="flex justify-center items-center py-40 ">
+    <section className="flex justify-center items-center py-16 ">
       <div className="container flex flex-col items-center text-center mx-auto ">
         <div className=" flex  items-center gap-20">
           <div>
@@ -25,7 +25,7 @@ const TeachingType = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-20">
           <Button className="flex items-center gap-2 px-14 py-8 bg-gradient-to-r from-blue-500  border-none to-blue-700 text-white rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition-colors duration-500">
             تدریس خصوصی آنلاین
             <FaChalkboardTeacher size={22} className="mr-2" />
