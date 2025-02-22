@@ -13,7 +13,7 @@ export type IconType = React.FunctionComponent<
 >;
 
 const inputVariants = cva(
-  "flex items-center gap-2 w-full border border-gray-500 dark:border-gray-700 py-1 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-complement-primary px-4 placeholder:text-gray-500 dark:placeholder:text-gray-600 hover:bg-complement-primary hover:border-link disabled:hover:border-gray-700 disabled:bg-gray-800 focus:bg-complement-primary focus:border-link size-caption text-gray-600 dark:text-black transition duration-300 rounded-sm dark:hover:border-link",
+  "flex items-center gap-2 w-full  placeholder:text-xs border border-gray-500 dark:border-gray-700 py-1 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-complement-primary px-4 placeholder:text-gray-500 dark:placeholder:text-gray-600 hover:bg-complement-primary hover:border-link disabled:hover:border-gray-700 disabled:bg-gray-800 focus:bg-complement-primary focus:border-link size-caption text-gray-600 dark:text-black transition duration-300 rounded-sm dark:hover:border-link",
   {
     variants: {
       variant: {

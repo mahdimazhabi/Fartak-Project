@@ -75,11 +75,11 @@ export const LoginForm = () => {
           </Button>
         </div>
 
-        <div className="flex justify-center mt-4">
-          <Link to={"/auth/registration"}>
-            <span className="font-bold  text-sm">
-              نقش دیگری دارید؟
-              <span className="text-[#5171FC] text-sm">عضویت</span>
+        <div className="flex justify-center mt-4 ">
+          <Link to="/auth/registration">
+            <span className="font-bold text-sm">
+              حساب کاربری ندارید؟
+              <span className="text-[#5171FC] text-sm mr-1">ثبت‌نام کنید</span>
             </span>
           </Link>
         </div>

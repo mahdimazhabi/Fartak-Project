@@ -28,10 +28,10 @@ const HeroSection = () => {
           <p className="mt-4 text-lg font-bold text-gray-600 dark:text-gray-300">
             یادگیری مهارت‌های جدید هیچ‌وقت این‌قدر ساده و کاربردی نبوده است.
           </p>
-          <div className="items-center gap-8 mt-10 lg:flex lg:justify-stretch">
+          <div className="items-center gap-8 mt-10 lg:flex ">
             <div>
               <Link to={""}>
-                <button className="bn29 flex gap-2 items-center">
+                <button className="bn29 flex gap-2 items-center mx-auto">
                   از این مسیر ها شروع کن
                   <MoveLeft className="relative top-0.5" size={28} />
                 </button>

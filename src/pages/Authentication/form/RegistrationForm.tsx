@@ -162,10 +162,10 @@ export const RegistrationForm = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link to="/auth/Login">
+          <Link to="/auth/login">
             <span className="font-bold text-sm">
-              کارفرما هستید؟
-              <span className="text-[#5171FC] text-sm"> عضویت کارفرما</span>
+              حساب کاربری دارید؟
+              <span className="text-[#5171FC] text-sm mr-1">ورود</span>
             </span>
           </Link>
         </div>

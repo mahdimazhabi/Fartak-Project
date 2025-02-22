@@ -13,7 +13,7 @@ const AuthLayout = () => {
             className="w-[40vw] h-full object-cover"
           />
         </div>
-        <Toaster/>
+        <Toaster />
         <Outlet />
       </div>
     </main>
