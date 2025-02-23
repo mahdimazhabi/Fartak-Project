@@ -3,7 +3,7 @@ import { GroupIcon } from "@/assets";
 import img from "@/assets/Img/image 11.png";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { useTeacherTypeApi } from "@/api/teaching/TeacherType";
+import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
 
 const professors = [
   {
