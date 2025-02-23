@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getDataTeachertype } from "@/shared/interfaces/TeacherType";
 import { useTeacherTypeIdStore } from "@/shared/store/TeacherTypeIdStore";
 
-export const useTeacherType = () => {
+export const useTeacherTypeApi = () => {
   const { id } = useTeacherTypeIdStore();
 
   const { data, isLoading, refetch } = useQuery<getDataTeachertype[]>({
@@ -17,7 +17,7 @@ export const useTeacherType = () => {
           },
         }
       );
-      return response.data;
+      return response.data.teacherTypes;
     },
   });
 

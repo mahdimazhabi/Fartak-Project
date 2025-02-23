@@ -3,6 +3,7 @@ import { GroupIcon } from "@/assets";
 import img from "@/assets/Img/image 11.png";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useTeacherTypeApi } from "@/api/teaching/TeacherType";
 
 const professors = [
   {
@@ -31,19 +32,10 @@ const professors = [
   },
 ];
 
-const categories = [
-  "همه دروس",
-  "برنامه نویسی",
-  "گرافیک",
-  "زبان انگلیسی",
-  "ریاضی",
-  "ادبیات",
-  "آی تی",
-  "موسیقی",
-];
-
 const TopProfessors = () => {
+  const { data } = useTeacherTypeApi();
   const [selectedCategory, setSelectedCategory] = useState("همه دروس");
+  console.log(data);
 
   const filteredProfessors =
     selectedCategory === "همه دروس"
@@ -57,17 +49,17 @@ const TopProfessors = () => {
           <h1>اساتید برتر فرتاک</h1>
         </div>
         <ul className="flex justify-center gap-7 my-16">
-          {categories.map((category) => (
+          {data?.map((category) => (
             <li
-              key={category}
+              key={category.teacherTypeId}
               className={`cursor-pointer pb-2 ${
-                selectedCategory === category
+                selectedCategory === category.title
                   ? "border-b-[2px] border-[#2B4DE3] dark:border-white font-semibold"
                   : "text-gray-600 dark:text-gray-400"
               }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedCategory(category.title)}
             >
-              {category}
+              {category.title}
             </li>
           ))}
         </ul>
