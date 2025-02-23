@@ -13,16 +13,19 @@ const TopProfessors = () => {
 
   const safeTeacherData = Array.isArray(teacherData) ? teacherData : [];
 
+  console.log(selectedCategory);
+
   const filteredProfessors =
     selectedCategory === "همه دروس"
       ? safeTeacherData
       : safeTeacherData.filter(
           (prof) => prof.teacherTypeId === selectedCategory
         );
+  console.log(safeTeacherData);
 
   return (
     <section>
-      <div className="mt-20">
+      <div className="mt-20 min-h-[31rem]">
         <div className="text-center text-4xl font-bold">
           <h1>اساتید برتر فرتاک</h1>
         </div>
@@ -42,11 +45,11 @@ const TopProfessors = () => {
             <li
               key={category.teacherTypeId}
               className={`cursor-pointer pb-2 ${
-                selectedCategory === category.title
+                selectedCategory === category.teacherTypeId
                   ? "border-b-[2px] border-[#2B4DE3] dark:border-white font-semibold"
                   : "text-gray-600 dark:text-gray-400"
               }`}
-              onClick={() => setSelectedCategory(category.title)}
+              onClick={() => setSelectedCategory(category.teacherTypeId)}
             >
               {category.title}
             </li>
@@ -54,7 +57,7 @@ const TopProfessors = () => {
         </ul>
 
         {/* نمایش اساتید */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 px-11 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 px-11 mt-16   ">
           {filteredProfessors.length > 0 ? (
             filteredProfessors.map((prof) => (
               <div
@@ -63,12 +66,13 @@ const TopProfessors = () => {
               >
                 <img
                   className="w-32 h-32 object-cover rounded-full"
-                  src={prof.imageName}
-                  alt={prof.teacherTypeId}
+                  src={`https://www.backend.fartakproject.ir/upload/teacherusers/${prof.imageName}`}
+                  // alt={`تصویر پروفایل ${prof.name}`}
                 />
+
                 <div className="flex items-center gap-2 mt-2">
-                  <p className="text-lg font-medium">{prof.teacherTypeId}</p>
                   <GroupIcon className="w-6 h-6" />
+                  <p className="text-lg font-medium">{prof.teacherName}</p>
                 </div>
                 <div className="space-y-1 text-center mt-2">
                   <p className="text-sm text-[#B0B0B0] flex items-center gap-1.5 dark:text-gray-300">
@@ -82,7 +86,7 @@ const TopProfessors = () => {
               </div>
             ))
           ) : (
-            <p className="text-center text-gray-500 col-span-full">
+            <p className="text-center text-gray-500 col-span-full mt-28  ">
               هیچ استادی یافت نشد.
             </p>
           )}

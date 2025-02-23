@@ -14,4 +14,5 @@ export interface getDataTeacher {
   onlinePrice: number;
   teacherTypeId: string;
   inPersonPrice: number;
+  teacherName: string;
 }
