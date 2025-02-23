@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { getDataTeachertype } from "@/shared/interfaces/TeacherType";
 import { useTeacherTypeIdStore } from "@/shared/store/TeacherTypeIdStore";
-
+import { getDataTeachertype } from "@/shared/interfaces/TeacherIInterface";
 export const useTeacherTypeApi = () => {
   const { id } = useTeacherTypeIdStore();
 

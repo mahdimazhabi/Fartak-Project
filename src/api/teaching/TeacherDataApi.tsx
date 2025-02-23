@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useTeacherDataByIdStore } from "@/shared/store/TeacherDataByIdStore";
-
+import { getDataTeacher } from "@/shared/interfaces/TeacherIInterface";
 export const useTeacherDataApi = () => {
   const { id } = useTeacherDataByIdStore();
-  const { data, isLoading, refetch } = useQuery({
+  const { data, isLoading, refetch } = useQuery<getDataTeacher[]>({
     queryKey: ["TeacherDataAll"],
     queryFn: async () => {
       const response = await axios.post(
@@ -15,7 +15,7 @@ export const useTeacherDataApi = () => {
           },
         }
       );
-      return response.data.teachers;
+      return response.data;
     },
   });
 
