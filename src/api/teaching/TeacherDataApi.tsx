@@ -17,6 +17,7 @@ export const useTeacherDataApi = () => {
           },
         }
       );
+
       return response.data.teacherUsers;
     },
   });

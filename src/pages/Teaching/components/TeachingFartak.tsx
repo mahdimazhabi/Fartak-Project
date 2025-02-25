@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
 const TeachingFartak = () => {
   return (
-    <section className="py-32 px-11 container">
+    <section className="py-32 px-11 ">
       <div className="container flex flex-col items-center justify-between px-4 mx-auto md:flex-row">
         <div className="flex justify-end order-1 w-full mb-8 md:w-1/2 md:order-2 md:mb-0">
           <img

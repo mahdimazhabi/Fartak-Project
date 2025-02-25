@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaChalkboardUser } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
+import Loading from "../common/Loading";
 const TeacherResume = () => {
-  const { DataTeacherById } = useTeacherDataApi();
+  const { DataTeacherById, DataTeacherByIdLoading } = useTeacherDataApi();
   console.log(DataTeacherById);
 
   return (
     <section>
+      {DataTeacherByIdLoading && <Loading />}
       <div className="flex justify-center gap-10 mt-20">
         {DataTeacherById?.map((item) => (
           <div className="shadow-lg rounded-2xl min-w-[700px]  space-y-10 dark:bg-slate-800 bg-slate-200 px-8 py-10">
