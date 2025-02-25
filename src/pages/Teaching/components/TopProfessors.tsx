@@ -4,16 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
 import { useTeacherDataApi } from "@/api/teaching/TeacherDataApi";
+import { useNavigate } from "react-router-dom";
+import Loading from "@/shared/common/Loading";
 
 const TopProfessors = () => {
   const { data: categories } = useTeacherTypeApi();
-  const { data: teacherData } = useTeacherDataApi();
-
+  const { data: teacherData, DataTeacherByIdLoading } = useTeacherDataApi();
   const [selectedCategory, setSelectedCategory] = useState("همه دروس");
-
   const safeTeacherData = Array.isArray(teacherData) ? teacherData : [];
-
-  console.log(selectedCategory);
+  const navigate = useNavigate();
 
   const filteredProfessors =
     selectedCategory === "همه دروس"
@@ -21,10 +20,10 @@ const TopProfessors = () => {
       : safeTeacherData.filter(
           (prof) => prof.teacherTypeId === selectedCategory
         );
-  console.log(safeTeacherData);
 
   return (
     <section>
+      {DataTeacherByIdLoading && <Loading />}
       <div className="mt-20 min-h-[31rem]">
         <div className="text-center text-4xl font-bold">
           <h1>اساتید برتر فرتاک</h1>
@@ -67,9 +66,9 @@ const TopProfessors = () => {
                 <img
                   className="w-32 h-32 object-cover rounded-full"
                   src={`https://www.backend.fartakproject.ir/upload/teacheruserImages/${prof.imageName}`}
-                  // alt={`تصویر پروفایل ${prof.name}`}
+                  alt={`تصویر پروفایل ${prof.imageName}`}
                 />
-
+                1
                 <div className="flex items-center gap-2 mt-2">
                   <GroupIcon className="w-6 h-6" />
                   <p className="text-lg font-medium">{prof.teacherName}</p>
@@ -80,7 +79,12 @@ const TopProfessors = () => {
                     {prof.description || "بدون توضیحات"}
                   </p>
                 </div>
-                <Button className="mt-3 w-full border-none rounded-full">
+                <Button
+                  className="mt-3 w-full border-none rounded-full"
+                  onClick={() => {
+                    navigate(`/teaching/resume/${prof.userId}`);
+                  }}
+                >
                   مشاهده رزومه
                 </Button>
               </div>

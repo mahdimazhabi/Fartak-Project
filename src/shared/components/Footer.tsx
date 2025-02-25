@@ -14,7 +14,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#121e31] bg-slate-300 text-right  sm:px-6  py-6  ">
+    <footer className="dark:bg-[#121e31] bg-slate-300 text-right mt-[20rem]  sm:px-6  py-6  ">
       <div className="grid grid-cols-2 px-2 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-12 ">
         {/* بخش تماس با ما */}
         <div>
