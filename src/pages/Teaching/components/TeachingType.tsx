@@ -18,7 +18,7 @@ const TeachingType = () => {
             <img
               src={teacherImg}
               alt="teacher"
-              className="w-[480px] bg-inherit  mx-auto flex-shrink-0"
+              className="w-full bg-inherit  mx-auto flex-shrink-0"
             />
           </div>
           <div>

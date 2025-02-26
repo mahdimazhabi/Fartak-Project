@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { GroupIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
 import { useTeacherDataApi } from "@/api/teaching/TeacherDataApi";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,7 @@ import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import ReactLoading from "react-loading";
-
+import { FaStar } from "react-icons/fa";
 const TopProfessors = () => {
   const { data: categories } = useTeacherTypeApi();
   const { data: teacherData, isLoading, refetch } = useTeacherDataApi();
@@ -62,7 +61,7 @@ const TopProfessors = () => {
         </ul>
 
         {/* نمایش اساتید */}
-        <div className="px-11 mt-16">
+        <div className=" px-11 mt-16">
           {isLoading ? (
             <div className="flex justify-center items-center mt-28">
               <ReactLoading
@@ -92,7 +91,7 @@ const TopProfessors = () => {
             >
               {filteredProfessors.map((prof) => (
                 <SwiperSlide key={prof.userId}>
-                  <div className="bg-slate-200 dark:bg-slate-800 rounded shadow-md flex flex-col items-center p-6">
+                  <div className="bg-black/10 dark:bg-black/25  rounded-xl  shadow-md flex flex-col items-center p-6">
                     <img
                       className="w-32 h-32 object-cover rounded-full"
                       src={`https://www.backend.fartakproject.ir/upload/teacheruserImages/${prof.imageName}`}
@@ -103,14 +102,26 @@ const TopProfessors = () => {
                       <GroupIcon className="w-6 h-6" />
                       <p className="text-lg font-medium">{prof.teacherName}</p>
                     </div>
-                    <div className="space-y-1 text-center mt-2">
+                    {/* <div className="space-y-1 text-center mt-2">
                       <p className="text-sm text-[#B0B0B0] flex items-center gap-1.5 dark:text-gray-300">
                         <Check size={17} />
                         {prof.description || "بدون توضیحات"}
                       </p>
+                    </div> */}
+                    <div className="flex items-center mt-5 gap-2">
+                      <span>سطح استاد :</span>
+                      {[...Array(4)].map((_, index) => (
+                        <FaStar
+                          key={index}
+                          size={15}
+                          color="gold"
+                          className="relative bottom-[1px]"
+                        />
+                      ))}
                     </div>
+
                     <Button
-                      className="mt-5 py-5 w-full border-none rounded"
+                      className="mt-16 py-5  w-full border-none rounded"
                       onClick={() =>
                         navigate(`/teaching/resume/${prof.userId}`)
                       }
