@@ -150,7 +150,7 @@ const Header: React.FC = () => {
           ) : (
             <Link to={"/auth/login"}>
               <Button
-                className="hidden py-3 border-none lg:block text-sm"
+                className="hidden py-3 border-none lg:block text-sm shadow-none"
                 shadow={isDarkMode ? "custom" : undefined}
                 size="default"
                 rounded={"md"}

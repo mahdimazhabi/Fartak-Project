@@ -9,22 +9,18 @@ import { ChevronLeft } from "lucide-react";
 
 import { Link } from "react-router-dom";
 
-const LevelSelectionModals = () => {
+const HomeTutoringModals = () => {
   const DataTitle = [
-    { id: 1, title: "ابتدایی" },
-    { id: 2, title: "متوسطه اول" },
-    { id: 3, title: "متوسطه دوم" },
-    { id: 4, title: "کنکور سراسری" },
-    { id: 5, title: "زبان خارجی" },
-    { id: 6, title: "دروس دانشگاهی" },
-    { id: 7, title: "نرم افزار" },
-    { id: 8, title: "برنامه نویسی" },
-    { id: 9, title: "موسیقی" },
+    { id: 1, title: "تهران" },
+    { id: 2, title: "کرج" },
+    { id: 3, title: "مشهد" },
+    { id: 4, title: "اصفهان" },
+    { id: 5, title: "شیراز" },
   ];
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>تدریس خصوصی آنلاین</DialogTitle>
+        <DialogTitle>تدریس حضوری در منزل </DialogTitle>
       </DialogHeader>
       <DialogBody>
         <DialogDescription>
@@ -33,7 +29,7 @@ const LevelSelectionModals = () => {
               <Link to={""} key={item.id}>
                 <li
                   className={`flex items-center py-4 justify-between border-b hover:text-amber-600 transtio duration-500 ${
-                    item.id === 9 && "border-b-0"
+                    item.id === 5 && "border-b-0"
                   } `}
                 >
                   {item.title}
@@ -48,4 +44,4 @@ const LevelSelectionModals = () => {
   );
 };
 
-export default LevelSelectionModals;
+export default HomeTutoringModals;

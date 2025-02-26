@@ -6,8 +6,10 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import "@/shared/CoustomStyle/imdex.css";
 import { House } from "lucide-react";
 import { useState } from "react";
+import HomeTutoringModals from "@/shared/modals/HomeTutoringModals";
 const TeachingType = () => {
   const [openAddModal, setOpenAddModal] = useState(false);
+  const [openHomeModal, setopenHomeModal] = useState(false);
   return (
     <section className="flex justify-center items-center py-16 ">
       <div className="container flex flex-col items-center text-center mx-auto ">
@@ -39,10 +41,17 @@ const TeachingType = () => {
             </Button>
             <LevelSelectionModals />
           </Dialog>
-          <Button className="flex items-center  px-14 py-8 bg-gradient-to-r from-green-500  border-none to-green-700 text-white rounded-lg shadow-lg hover:from-green-600 hover:to-green-800 transition-colors duration-500">
-            تدریس حضوری در منزل
-            <House size={22} className="mr-2" />
-          </Button>
+
+          <Dialog open={openHomeModal} onOpenChange={setopenHomeModal}>
+            <Button
+              className="flex items-center  px-14 py-8 bg-gradient-to-r from-green-500  border-none to-green-700 text-white rounded-lg shadow-lg hover:from-green-600 hover:to-green-800 transition-colors duration-500"
+              onClick={() => setopenHomeModal(true)}
+            >
+              تدریس حضوری در منزل
+              <House size={22} className="mr-2" />
+            </Button>
+            <HomeTutoringModals />
+          </Dialog>
         </div>
       </div>
     </section>
