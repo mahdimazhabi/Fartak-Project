@@ -11,21 +11,23 @@ const TeacherResume = () => {
   return (
     <section>
       {DataTeacherByIdLoading && <Loading />}
-      <div className="flex justify-center gap-10 mt-20">
+      <div className="flex justify-center gap-10 mt-20 flex-wrap">
         {DataTeacherById?.map((item) => (
-          <div className="shadow-lg rounded-2xl min-w-[700px]  space-y-10 dark:bg-slate-800 bg-slate-200 px-8 py-10">
-            <div key={item.userId} className="flex gap-5   ">
+          <div className="shadow-lg rounded-2xl lg:min-w-[700px] min-w-[300px]  space-y-10 dark:bg-slate-800 bg-slate-200 px-8 py-10">
+            <div key={item.userId} className="flex flex-wrap gap-5">
               <img
-                className="w-52 h-52 object-cover rounded"
+                className="lg:w-52 lg:h-52 w-28 h-28 object-cover rounded"
                 src={`https://www.backend.fartakproject.ir/upload/teacheruserImages/${item.imageName}`}
                 alt={`تصویر پروفایل ${item.imageName}`}
               />
-              <div className="flex flex-col text-right ml-4 justify-center   gap-5">
-                <h1 className="text-2xl font-medium">{item.teacherName}</h1>
-                <span className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex flex-col text-right ml-4 justify-center lg:gap-5 gap-2.5">
+                <h1 className="lg:text-2xl  text-xs font-medium">
+                  {item.teacherName}
+                </h1>
+                <span className="lg:text-sm text-xs text-gray-600 dark:text-gray-400">
                   استاد تایید شده
                 </span>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center text-xs lg:text-sm gap-2">
                   <span>سطح استاد :</span>
                   <FaStar
                     size={12}
@@ -35,9 +37,9 @@ const TeacherResume = () => {
                 </div>
                 <div className="flex items-center gap-2 ">
                   <FaChalkboardTeacher size={22} />
-                  <span className="text-xs">تدریس آنلاین</span>
+                  <span className="lg:text-xs text-[10px]">تدریس آنلاین</span>
                 </div>
-                <div className="text-sm">
+                <div className="lg:text-sm text-xs">
                   <span>استان : {item.city}</span>
                 </div>
               </div>
@@ -53,10 +55,12 @@ const TeacherResume = () => {
             </div>
           </div>
         ))}
-        <div className="dark:bg-slate-800 bg-slate-200 px-8 py-4 sticky top-20    rounded-2xl h-min min-w-[550px] shadow-lg">
-          <p>برای مشاهده قیمت باید نوع تدریس و درس را انتخاب کنید</p>
-          <div className="w-full">
-            <Button className="w-full border-none mt-10" rounded={"md"}>
+        <div className="dark:bg-slate-800 bg-slate-200 lg:px-8 px-4 py-8 sticky top-20      rounded-2xl h-min lg:min-w-[550px] shadow-lg">
+          <p className="lg:text-base text-xs">
+            برای مشاهده قیمت باید نوع تدریس و درس را انتخاب کنید
+          </p>
+          <div className="lg:w-full">
+            <Button className="w-full  border-none mt-10" rounded={"md"}>
               مشاهده قیمت و انتخاب استاد
             </Button>
           </div>
