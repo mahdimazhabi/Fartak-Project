@@ -8,7 +8,7 @@ const useDataUserById = () => {
     queryKey: ["datauser", userId],
     queryFn: async () => {
       const response = await axios.post(
-        `https://www.backendtestali.ir/api/Users/GetById`,
+        `https://backend.fartakproject.ir/api/Users/GetById`,
         { userId },
         {
           headers: {
