@@ -20,9 +20,9 @@ const Frequentlyaskedquestions = () => {
       <div>
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>فراتک چیست؟</AccordionTrigger>
+            <AccordionTrigger>فرتاک چیست؟</AccordionTrigger>
             <AccordionContent>
-              فراتک یک شرکت فناوری است که به ایجاد راه‌حل‌های نوین در صنعت
+              فرتاک یک شرکت فناوری است که به ایجاد راه‌حل‌های نوین در صنعت
               فناوری اطلاعات پرداخته است.
             </AccordionContent>
           </AccordionItem>
@@ -30,10 +30,10 @@ const Frequentlyaskedquestions = () => {
         <Accordion type="single" collapsible className="mt-4">
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              خدمات فراتک شامل چه مواردی می‌شود؟
+              خدمات فرتاک شامل چه مواردی می‌شود؟
             </AccordionTrigger>
             <AccordionContent>
-              خدمات فراتک شامل مشاوره فناوری اطلاعات، طراحی و پیاده‌سازی
+              خدمات فرتاک شامل مشاوره فناوری اطلاعات، طراحی و پیاده‌سازی
               سیستم‌های نرم‌افزاری، و آموزش‌های تخصصی می‌باشد.
             </AccordionContent>
           </AccordionItem>
@@ -41,10 +41,10 @@ const Frequentlyaskedquestions = () => {
         <Accordion type="single" collapsible>
           <AccordionItem value="item-2" className="mt-4">
             <AccordionTrigger>
-              چگونه می‌توانم در فراتک استخدام شوم؟
+              چگونه می‌توانم در فرتاک استخدام شوم؟
             </AccordionTrigger>
             <AccordionContent>
-              برای استخدام در فراتک، می‌توانید از طریق وب‌سایت رسمی ما و قسمت
+              برای استخدام در فرتاک، می‌توانید از طریق وب‌سایت رسمی ما و قسمت
               «فرصت‌های شغلی» درخواست خود را ارسال کنید.
             </AccordionContent>
           </AccordionItem>

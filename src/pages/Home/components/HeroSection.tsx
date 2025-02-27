@@ -8,7 +8,7 @@ import "@/shared/CoustomStyle/imdex.css";
 const HeroSection = () => {
   return (
     <section className="py-12 ">
-      <div className="container flex flex-col items-center justify-between px-4 mx-auto md:flex-row">
+      <div className=" flex flex-col items-center justify-between px-4 mx-auto md:flex-row">
         {/* بخش تصویر */}
         <div className="flex justify-end order-1 w-full mb-8 md:w-1/2 md:order-2 md:mb-0">
           <img

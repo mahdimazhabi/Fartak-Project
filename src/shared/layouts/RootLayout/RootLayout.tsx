@@ -3,9 +3,9 @@ import Footer from "@/shared/components/Footer";
 import Header from "@/shared/components/Header";
 const RootLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="  flex items-stretch flex-col min-h-screen ">
       <Header />
-      <main className="flex-1">
+      <main className=" flex flex-col justify-center flex-1 mx-auto container">
         <Outlet />
       </main>
       <Footer />

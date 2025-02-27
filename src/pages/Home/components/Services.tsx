@@ -17,7 +17,7 @@ const Services = () => {
           <h1 className="text-xl font-bold text-white mb-3 dark:text-shadow-xl">
             فریلنسینگ
           </h1>
-          <p className="text-white font-bold">
+          <p className="text-white font-bold lg:text-base md:text-sm text-xs">
             فرصت‌های متعددی برای ارائه خدمات مستقل در زمینه‌های مانند توسعه وب
           </p>
         </div>
@@ -25,7 +25,7 @@ const Services = () => {
           <h1 className="text-xl font-bold text-white mb-3 dark:text-shadow-xl">
             دوره‌های آموزشی
           </h1>
-          <p className="text-white font-bold">
+          <p className="text-white font-bold lg:text-base md:text-sm text-xs">
             دوره‌های آموزشی گسترده در زمینه‌های مختلف از جمله علوم کامپیوتر،
             زبان‌ها، هنرها و...
           </p>
@@ -34,7 +34,7 @@ const Services = () => {
           <h1 className="text-xl font-bold text-white mb-3 dark:text-shadow-xl">
             پاسخگویی سریع
           </h1>
-          <p className="text-white font-bold">
+          <p className="text-white font-bold lg:text-base md:text-sm text-xs">
             پاسخگویی سریع به سوالات و راهنمایی‌های فنی در طول شبانه‌روز
           </p>
         </div>
@@ -42,7 +42,7 @@ const Services = () => {
           <h1 className="text-xl font-bold text-white mb-3 dark:text-shadow-xl">
             دوره‌های آموزشی (تکراری)
           </h1>
-          <p className="text-white font-bold">
+          <p className="text-white font-bold lg:text-base md:text-sm text-xs">
             دوره‌های آموزشی گسترده در زمینه‌های مختلف از جمله علوم کامپیوتر،
             زبان‌ها، هنرها و...
           </p>
