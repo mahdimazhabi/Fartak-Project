@@ -1,19 +1,29 @@
 import { useState } from "react";
 import { GroupIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
-import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
+// import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
 import { useTeacherDataApi } from "@/api/teaching/TeacherDataApi";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import ReactLoading from "react-loading";
-import { FaStar } from "react-icons/fa";
+
+import { StarsIcon } from "@/assets/index";
 const TopProfessors = () => {
-  const { data: categories } = useTeacherTypeApi();
+  // const { data: categories } = useTeacherTypeApi();
   const { data: teacherData, isLoading, refetch } = useTeacherDataApi();
   const [selectedCategory, setSelectedCategory] = useState("همه دروس");
   const safeTeacherData = Array.isArray(teacherData) ? teacherData : [];
+  const categories = [
+    { id: "1", title: "ریاضی" },
+    { id: "2", title: "برنامه نویسی" },
+    { id: "3", title: "گرافیک" },
+    { id: "4", title: "انگلیسی" },
+    { id: "5", title: "ادبیات" },
+    { id: "6", title: "آی تی" },
+    { id: "7", title: "موسیقی" },
+  ];
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -47,13 +57,13 @@ const TopProfessors = () => {
           </li>
           {categories?.map((category) => (
             <li
-              key={category.teacherTypeId}
+              key={category.id}
               className={`cursor-pointer pb-2 ${
-                selectedCategory === category.teacherTypeId
+                selectedCategory === category.id
                   ? "border-b-[2px] border-[#2B4DE3] dark:border-white font-semibold"
                   : "text-gray-600 dark:text-gray-400"
               }`}
-              onClick={() => setSelectedCategory(category.teacherTypeId)}
+              onClick={() => setSelectedCategory(category.id)}
             >
               {category.title}
             </li>
@@ -110,14 +120,7 @@ const TopProfessors = () => {
                     </div> */}
                     <div className="flex items-center mt-5 gap-2">
                       <span>سطح استاد :</span>
-                      {[...Array(4)].map((_, index) => (
-                        <FaStar
-                          key={index}
-                          size={15}
-                          color="gold"
-                          className="relative bottom-[1px]"
-                        />
-                      ))}
+                      <StarsIcon className="w-24" />
                     </div>
 
                     <Button

@@ -2,11 +2,12 @@ import { useTeacherDataApi } from "@/api/teaching/TeacherDataApi";
 import { Button } from "@/components/ui/button";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaChalkboardUser } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa";
+
 import Loading from "../common/Loading";
+import { StarsIcon } from "@/assets";
 const TeacherResume = () => {
   const { DataTeacherById, DataTeacherByIdLoading } = useTeacherDataApi();
-  console.log(DataTeacherById);
+
 
   return (
     <section>
@@ -29,11 +30,7 @@ const TeacherResume = () => {
                 </span>
                 <div className="flex items-center text-xs lg:text-sm gap-2">
                   <span>سطح استاد :</span>
-                  <FaStar
-                    size={12}
-                    color="gold"
-                    className=" relative bottom-[1px]"
-                  />
+                  <StarsIcon className="w-24" />
                 </div>
                 <div className="flex items-center gap-2 ">
                   <FaChalkboardTeacher size={22} />

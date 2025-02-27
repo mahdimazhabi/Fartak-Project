@@ -13,3 +13,4 @@ export { default as SoftwareIcon } from "@/assets/svg/Software.svg?react";
 export { default as SongIcon } from "@/assets/svg/song.svg?react";
 export { default as ThetestIcon } from "@/assets/svg/thetest.svg?react";
 export { default as GroupIcon } from "@/assets/svg/Group.svg?react";
+export { default as StarsIcon } from "@/assets/svg/stars.svg?react";
