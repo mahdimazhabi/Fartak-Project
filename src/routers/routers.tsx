@@ -11,6 +11,7 @@ import ProjectsLayout from "@/shared/layouts/projectsLayout/ProjectsLayout";
 import ProjectRegistration from "@/pages/Projects/components/ProjectRegistration";
 import RequiredKind from "@/shared/required/RequiredKind";
 import TeacherResume from "@/shared/components/TeacherResume";
+import SelectsTeacher from "@/shared/components/SelectsTeacher";
 export const AllRouters: RouteObject[] = [
   {
     path: "/auth",
@@ -62,6 +63,10 @@ export const AllRouters: RouteObject[] = [
       {
         path: "/teaching/resume/:id",
         element: <TeacherResume />,
+      },
+      {
+        path: "/teaching/:teacherTypeId",
+        element: <SelectsTeacher />,
       },
     ],
   },

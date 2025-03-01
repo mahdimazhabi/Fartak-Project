@@ -13,7 +13,7 @@ import "@/shared/CoustomStyle/imdex.css";
 import { useTypeIdStore } from "../store/TypeIdStore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowRight } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 const LevelSelectionModals = () => {
   const { DataParentType, DataChildrenById, isLoadingChildrenById } =
     useTeacherTypeApi();
@@ -21,6 +21,7 @@ const LevelSelectionModals = () => {
     []
   );
   const { setIdType, id } = useTypeIdStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetch = async () => {
@@ -75,7 +76,7 @@ const LevelSelectionModals = () => {
                     className={`flex items-center py-4 justify-between ${
                       index === childrenList.length - 1 ? "" : "border-b"
                     } hover:text-amber-600 transition duration-500 cursor-pointer`}
-                    onClick={() => setIdType(child.teacherTypeId)}
+                    onClick={() => navigate(`/teaching/${child.teacherTypeId}`)}
                   >
                     {child.title}
                     <ChevronLeft size={15} />

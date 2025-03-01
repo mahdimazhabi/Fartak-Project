@@ -3,9 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useTeacherDataByIdStore } from "@/shared/store/TeacherDataByIdStore";
 import { getDataTeacher } from "@/shared/interfaces/TeacherIInterface";
 import { useParams } from "react-router-dom";
+
 export const useTeacherDataApi = () => {
   const { id } = useTeacherDataByIdStore();
-  const { id: userIdTeacher } = useParams();
+  const { id: userIdTeacher, teacherTypeId } = useParams();
   const { data, isLoading, refetch } = useQuery<getDataTeacher[]>({
     queryKey: ["TeacherDataAll"],
     queryFn: async () => {
@@ -65,6 +66,29 @@ export const useTeacherDataApi = () => {
     retry: 3,
   });
 
+  const {
+    data: DataGetByFilterAndTeacherTypeId,
+    isLoading: LoadingGetByFilterAndTeacherTypeId,
+  } = useQuery<getDataTeacher[]>({
+    queryKey: ["DataGetByFilterAndTeacherTypeId"],
+    queryFn: async () => {
+      const response = await axios.post(
+        "https://www.backend.fartakproject.ir/api/TeacherUsers/GetByFilterAndTeacherTypeId",
+        { teacherTypeId: teacherTypeId },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response) {
+        console.log(response);
+
+        return response.data.teacherUsers;
+      }
+    },
+  });
+
   return {
     data,
     isLoading,
@@ -73,5 +97,7 @@ export const useTeacherDataApi = () => {
     listTeacherLoadingById,
     DataTeacherById,
     DataTeacherByIdLoading,
+    DataGetByFilterAndTeacherTypeId,
+    LoadingGetByFilterAndTeacherTypeId,
   };
 };
