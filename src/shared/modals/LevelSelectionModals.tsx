@@ -24,17 +24,14 @@ const LevelSelectionModals = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetch = async () => {
-      if (id) {
-        setChildrenList(DataChildrenById);
-      }
-    };
-    fetch();
+    if (id) {
+      setChildrenList(DataChildrenById);
+    }
   }, [id, DataChildrenById]);
 
   return (
     <DialogContent>
-      <DialogHeader onClick={() => setIdType(0)}>
+      <DialogHeader>
         <DialogTitle>تدریس خصوصی آنلاین</DialogTitle>
       </DialogHeader>
       <DialogBody className="max-h-[600px] overflow-y-auto custom-scrollbar">
