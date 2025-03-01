@@ -10,6 +10,7 @@ import HomeTutoringModals from "@/shared/modals/HomeTutoringModals";
 const TeachingType = () => {
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openHomeModal, setopenHomeModal] = useState(false);
+
   return (
     <section className="flex justify-center items-center py-16 ">
       <div className="container flex flex-col items-center text-center mx-auto ">

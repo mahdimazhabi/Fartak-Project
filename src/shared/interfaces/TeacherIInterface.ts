@@ -16,3 +16,8 @@ export interface getDataTeacher {
   inPersonPrice: number;
   teacherName: string;
 }
+export interface getDataParentTeacherType {
+  teacherTypeId: number;
+  title: string;
+  teacherTypeParentId: number;
+}

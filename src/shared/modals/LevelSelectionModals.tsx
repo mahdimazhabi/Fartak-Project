@@ -6,41 +6,81 @@ import {
   DialogBody,
 } from "@/components/ui/dialog";
 import { ChevronLeft } from "lucide-react";
-
-import { Link } from "react-router-dom";
+import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
+import { useEffect, useState } from "react";
+import { getDataParentTeacherType } from "../interfaces/TeacherIInterface";
+import "@/shared/CoustomStyle/imdex.css";
+import { useTypeIdStore } from "../store/TypeIdStore";
+import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowRight } from "lucide-react";
 
 const LevelSelectionModals = () => {
-  const DataTitle = [
-    { id: 1, title: "ابتدایی" },
-    { id: 2, title: "متوسطه اول" },
-    { id: 3, title: "متوسطه دوم" },
-    { id: 4, title: "کنکور سراسری" },
-    { id: 5, title: "زبان خارجی" },
-    { id: 6, title: "دروس دانشگاهی" },
-    { id: 7, title: "نرم افزار" },
-    { id: 8, title: "برنامه نویسی" },
-    { id: 9, title: "موسیقی" },
-  ];
+  const { DataParentType, DataChildrenById, isLoadingChildrenById } =
+    useTeacherTypeApi();
+  const [childrenList, setChildrenList] = useState<getDataParentTeacherType[]>(
+    []
+  );
+  const { setIdType, id } = useTypeIdStore();
+
+  useEffect(() => {
+    const fetch = async () => {
+      if (id) {
+        setChildrenList(DataChildrenById);
+      }
+    };
+    fetch();
+  }, [id, DataChildrenById]);
+
   return (
     <DialogContent>
-      <DialogHeader>
+      <DialogHeader onClick={() => setIdType(0)}>
         <DialogTitle>تدریس خصوصی آنلاین</DialogTitle>
       </DialogHeader>
-      <DialogBody>
+      <DialogBody className="max-h-[600px] overflow-y-auto custom-scrollbar">
         <DialogDescription>
+          <div
+            className="py-4 border-b flex items-center gap-2 cursor-pointer"
+            onClick={() => setIdType(0)}
+          >
+            <ArrowRight size={15} />
+            <p className="text-amber-600 font-bold">بازگشت به صفحه اصلی</p>
+          </div>
           <ul>
-            {DataTitle.map((item) => (
-              <Link to={""} key={item.id}>
-                <li
-                  className={`flex items-center py-4 justify-between border-b hover:text-amber-600 transtio duration-500 ${
-                    item.id === 9 && "border-b-0"
-                  } `}
-                >
-                  {item.title}
-                  <ChevronLeft size={15} />
-                </li>
-              </Link>
-            ))}
+            {!id
+              ? DataParentType?.map((item, index) => (
+                  <li
+                    key={item.teacherTypeId}
+                    className={`flex items-center py-4 justify-between ${
+                      index === DataParentType.length - 1 ? "" : "border-b"
+                    } hover:text-amber-600 transition duration-500 cursor-pointer`}
+                    onClick={() => setIdType(item.teacherTypeId)}
+                  >
+                    {item.title}
+                    <ChevronLeft size={15} />
+                  </li>
+                ))
+              : isLoadingChildrenById
+              ? Array.from({ length: 9 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="space-y-2 py-4 justify-between border-b hover:text-amber-600"
+                  >
+                    <Skeleton className="h-2 w-[150px] bg-amber-600" />
+                    <Skeleton className="h-2 w-[200px] bg-amber-600" />
+                  </div>
+                ))
+              : childrenList?.map((child, index) => (
+                  <li
+                    key={child.teacherTypeId}
+                    className={`flex items-center py-4 justify-between ${
+                      index === childrenList.length - 1 ? "" : "border-b"
+                    } hover:text-amber-600 transition duration-500 cursor-pointer`}
+                    onClick={() => setIdType(child.teacherTypeId)}
+                  >
+                    {child.title}
+                    <ChevronLeft size={15} />
+                  </li>
+                ))}
           </ul>
         </DialogDescription>
       </DialogBody>

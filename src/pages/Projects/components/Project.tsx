@@ -14,8 +14,8 @@ const Project = () => {
   return (
     <section>
       {listProjectsLoading && <Loading />}
-      <div className="lg:flex  space-y-3 lg:space-y-0 md:flex md:space-y-0 justify-between gap-3 items-start mt-20 px-4">
-        <div className="p-10 bg-slate-200 rounded h-auto">
+      <div className="lg:flex   space-y-3  lg:space-y-0 md:flex md:space-y-0 justify-around gap-3 items-start mt-20 px-4">
+        <div className="p-10 bg-slate-200  rounded h-auto">
           <h1 className="text-black border-b-2 pb-4 text-center">
             پیشنهاد های باقی مانده
           </h1>
@@ -36,12 +36,12 @@ const Project = () => {
             <span className="text-white text-xs">افزایش پیشنهاد ها</span>
           </div>
         </div>
-        <div className="flex flex-col flex-grow gap-5">
+        <div className="flex flex-col  flex-grow gap-5">
           {reversedData.length > 0 ? (
             reversedData.map((items: getList) => (
               <div
                 key={items.projectId}
-                className="lg:flex justify-between w-full hover:shadow-md bg-slate-200 hover:shadow-blue-200 transition-shadow rounded h-auto"
+                className="lg:flex  w-full  justify-between  hover:shadow-md bg-slate-200 hover:shadow-blue-200 transition-shadow rounded h-auto"
               >
                 <div>
                   <div className="p-9">

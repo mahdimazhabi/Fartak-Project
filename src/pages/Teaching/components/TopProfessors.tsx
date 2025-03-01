@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { GroupIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
-// import { useTeacherTypeApi } from "@/api/teaching/TeacherTypeApi";
 import { useTeacherDataApi } from "@/api/teaching/TeacherDataApi";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -11,7 +10,6 @@ import ReactLoading from "react-loading";
 
 import { StarsIcon } from "@/assets/index";
 const TopProfessors = () => {
-  // const { data: categories } = useTeacherTypeApi();
   const { data: teacherData, isLoading, refetch } = useTeacherDataApi();
   const [selectedCategory, setSelectedCategory] = useState("همه دروس");
   const safeTeacherData = Array.isArray(teacherData) ? teacherData : [];
