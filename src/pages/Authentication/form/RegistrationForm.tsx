@@ -12,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { EyeOff } from "lucide-react";
@@ -27,9 +26,10 @@ export const RegistrationForm = () => {
   const { add } = useAuthenticationApi();
 
   const dataSelect = [
-    { id: 1, descreption: "فریلنسر" },
-    { id: 2, descreption: "دانشجو" },
+    { id: 1, descreption: "دانشجو" },
+    { id: 2, descreption: "معلم" },
     { id: 3, descreption: "کارفرما" },
+    { id: 4, descreption: "فریلنسر" },
   ];
 
   const {
